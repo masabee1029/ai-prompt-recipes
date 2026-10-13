@@ -1,0 +1,82 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>苦手な分野をAIで学ぶための質問プロンプト｜わかるまで聞ける勉強法｜そのまま使えるAIプロンプト集</title><meta name="description" content="苦手な分野をAIに質問しながら学ぶためのプロンプトを紹介します。今の理解度に合わせた説明の頼み方、たとえ話や確認クイズの使い方、うまくいかないときの直し方まで、大人の学び直しにも役立つ例文をまとめました。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-prompt-recipes/articles/learn-weak-subject-prompt.html"><meta property="og:title" content="苦手な分野をAIで学ぶための質問プロンプト｜わかるまで聞ける勉強法｜そのまま使えるAIプロンプト集"><meta property="og:description" content="苦手な分野をAIに質問しながら学ぶためのプロンプトを紹介します。今の理解度に合わせた説明の頼み方、たとえ話や確認クイズの使い方、うまくいかないときの直し方まで、大人の学び直しにも役立つ例文をまとめました。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-prompt-recipes/articles/learn-weak-subject-prompt.html"><meta property="og:image" content="https://masabee1029.github.io/ai-prompt-recipes/img/articles/learn-weak-subject-prompt.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--accent:#0f766e;--accent2:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--accent:#2dd4bf;--accent2:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+a{color:var(--accent)}header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+nav a{margin-left:14px;font-size:14px;color:var(--muted);text-decoration:none}nav a:first-child{margin-left:0}
+.pr{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line)}
+.hero{padding:40px 0 24px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:16px 0 40px}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px;margin-top:20px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 20px}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--accent)}.card h2{font-size:17px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+article{padding:28px 0 40px}article h1{font-size:26px;line-height:1.45}
+article h2{font-size:21px;border-left:5px solid var(--accent);padding-left:10px;margin-top:40px}
+article h3{font-size:18px;margin-top:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--card)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+.amz{background:#e88a00}.rkt{background:#bf0000}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 220px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.related{border-top:1px solid var(--line);padding-top:16px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:14px}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a>
+<nav><a href="../index.html">記事一覧</a><a href="../about.html">このサイトについて</a></nav></div>
+<div class="pr">※本ページはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div></div></header>
+<main class="wrap"><article><span class="tag">学習</span><span class="date">2026-10-13</span><h1>苦手な分野をAIで学ぶための質問プロンプト｜わかるまで聞ける勉強法</h1><img class="eyecatch" src="../img/articles/learn-weak-subject-prompt.jpg" alt=""><div class="toc"><strong>目次</strong><ol><li><a href="#s1">AIを「質問しやすい先生」として使う</a></li><li><a href="#s2">そのまま使える基本の学習プロンプト</a></li><li><a href="#s3">理解を深めるための質問のしかた</a></li><li><a href="#s4">学習を続けるための工夫</a></li><li><a href="#s5">うまくいかないときの直し方</a></li><li><a href="#s6">まとめ</a></li></ol></div><p>苦手な分野を学び直そうとしても、入門書の最初の数ページでつまずいてしまうことがあります。<br>AIなら、分からないところを何度でも、自分のペースで質問できます。<br>この記事では、ChatGPT・Claude・Geminiなどで使える、苦手な分野を学ぶための質問のしかたとプロンプトを紹介します。</p>
+<div class="picks"><div class="picks-h">AIをもっと使いこなすために</div><div class="pick"><div><strong>生成AIの入門書</strong><span>仕組みを知ると使い方が上達</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E5%85%A5%E9%96%80+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E5%2585%25A5%25E9%2596%2580%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>AIを使った英語学習の本</strong><span>AIを先生代わりに</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E8%8B%B1%E8%AA%9E+%E5%AD%A6%E7%BF%92+AI+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E8%258B%25B1%25E8%25AA%259E%2520%25E5%25AD%25A6%25E7%25BF%2592%2520AI%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">AIを「質問しやすい先生」として使う</h2>
+<p>苦手な分野を学ぶときに難しいのは、「どこが分からないのかが分からない」状態になりやすいことです。本や講座は決まった順番で進むため、前提となる知識が抜けていると、そこから先がすべて分からなくなってしまいます。</p>
+<p>AIは、こちらの理解度に合わせて説明のレベルを変えたり、同じ内容を別の言い方で説明し直したりできます。「こんなことを聞いたら恥ずかしい」と感じるような基本的な質問も気軽にできるのが利点です。</p>
+<p>ただし、AIの説明には誤りが含まれることがあります。特に専門的な内容や最新の情報については、教科書や公式の資料など、信頼できる情報源で確認する習慣をつけておきましょう。</p>
+<h2 id="s2">そのまま使える基本の学習プロンプト</h2>
+<p>まずは、自分の状況を伝えて説明してもらう基本形です。【　】を書き換えて使ってください。</p>
+<div class="note">あなたは初心者に教えるのが上手な家庭教師です。私は【学びたい分野：例 統計】が苦手で、これから基礎を学び直したいと思っています。<br>今の私の理解度：【例：平均は分かるが、標準偏差になると分からなくなる】<br>学ぶ目的：【例：仕事でデータを読む必要がある】<br>次のルールで教えてください。<br>1. 専門用語を使うときは、必ず日常の言葉で説明を添える<br>2. 一度に説明するのは1つのテーマだけにする<br>3. 説明のあとに、理解を確かめる簡単な質問を1つ出す<br>4. 私が間違えたら、どこでつまずいたのかを一緒に考える<br>まずは、最初に学ぶべきテーマの順番を提案してください。</div>
+<p>最初に「学ぶ順番」を提案してもらうことで、全体の見取り図ができます。そのうえで1テーマずつ進めると、つまずいた場所が分かりやすくなります。</p>
+<h2 id="s3">理解を深めるための質問のしかた</h2>
+<p>説明を読んでもピンとこないときは、角度を変えて質問してみましょう。次のような聞き方が役立ちます。</p>
+<div class="tbl"><table><tr><th>困っていること</th><th>質問の例</th></tr><tr><td>抽象的で分からない</td><td>「身近なたとえ話で説明してください」</td></tr><tr><td>何に使うのか分からない</td><td>「これが実際に役立つ場面の例を3つ挙げてください」</td></tr><tr><td>似た用語と区別できない</td><td>「AとBの違いを表で比べてください」</td></tr><tr><td>前提が分からない</td><td>「この説明を理解するために先に知っておくべきことは何ですか」</td></tr><tr><td>分かった気がするだけ</td><td>「私の理解が正しいか確かめる問題を出してください」</td></tr></table></div>
+<h3>自分の言葉で説明して確かめる</h3>
+<p>本当に理解できているかを確かめるには、自分で説明してみるのが効果的です。</p>
+<div class="note">【テーマ】について、私の理解を自分の言葉で説明します。間違っている点や足りない点があれば指摘し、正しい説明に直してください。<br>良い点も一緒に教えてください。<br>私の説明：【ここに自分の言葉で書く】</div>
+<p>人に説明しようとすると、あいまいな部分がはっきりします。AIに指摘してもらえば、自分では気づきにくい思い違いも見つけやすくなります。</p>
+<h2 id="s4">学習を続けるための工夫</h2>
+<p>苦手な分野の学習は、続けることがいちばんの課題です。次のような工夫を取り入れてみてください。</p>
+<ul><li>1回の学習は1テーマだけにして、短い時間で区切る</li><li>学んだ内容を、最後に3行で要約してもらいノートに残す</li><li>次回の最初に「前回の内容の確認クイズ」を出してもらう</li><li>分からなかった質問と答えをメモしておき、後で読み返す</li></ul>
+<p>学習の計画そのものをAIに相談することもできます。</p>
+<div class="note">【分野】の基礎を、【例：1日20分・4週間】で学び直したいです。<br>今の理解度は【例：用語は聞いたことがある程度】です。<br>週ごとのテーマと、1日ごとに取り組む内容を表にまとめてください。無理のない分量にし、各週の最後に復習の日を入れてください。</div>
+<p>計画どおりに進まなくても、「今週は2日しかできなかったので、計画を組み直してください」と頼めば調整してもらえます。完璧に守ることより、自分のペースで続けられる形に直しながら進めることを大切にしましょう。</p>
+<p>会話の内容がいつまで保存されるか、前の会話の内容を次回も覚えているかは、サービスや設定によって異なります（執筆時点）。前回の学習内容は自分でメモしておき、次の会話の最初に貼り付けると確実です。</p>
+<h2 id="s5">うまくいかないときの直し方</h2>
+<p>AIの説明が分かりにくいときは、遠慮せずに条件を変えて頼み直しましょう。</p>
+<ul><li><strong>説明が難しい</strong>：「中学生に説明するつもりで、もっとやさしく」とレベルを指定する</li><li><strong>説明が長すぎる</strong>：「3文以内で、いちばん大事なことだけ教えてください」と短くしてもらう</li><li><strong>質問攻めで疲れる</strong>：「確認の質問はしばらくなしで、説明だけ続けてください」と伝える</li><li><strong>答えをすぐ教えてしまう</strong>：「答えは言わずに、ヒントを1つずつ出してください」と頼む</li><li><strong>内容が正しいか不安</strong>：「この説明の根拠になる考え方や、確認できる資料の種類を教えてください」と聞き、教科書などで照らし合わせる</li></ul>
+<p>学習の相談で、自分の職場の具体的なデータや他人の個人情報を例として貼り付ける必要はありません。架空の数字や一般的な例に置き換えて質問しましょう。</p>
+<p>「家庭教師」のようにAIへ役割を伝えるコツは、<a href="role-prompt-basics.html">AIに役割を与えるプロンプトの基本</a>で詳しく解説しています。</p>
+<div class="shop"><div class="shop-name">学び直しの入門書を探す</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E5%A4%A7%E4%BA%BA%E3%81%AE%E5%AD%A6%E3%81%B3%E7%9B%B4%E3%81%97+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E5%25A4%25A7%25E4%25BA%25BA%25E3%2581%25AE%25E5%25AD%25A6%25E3%2581%25B3%25E7%259B%25B4%25E3%2581%2597%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<div class="picks"><div class="picks-h">AI活用におすすめの本・道具</div><div class="pick"><div><strong>生成AIの入門書</strong><span>仕組みを知ると使い方が上達</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E5%85%A5%E9%96%80+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E5%2585%25A5%25E9%2596%2580%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>AIを使った英語学習の本</strong><span>AIを先生代わりに</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E8%8B%B1%E8%AA%9E+%E5%AD%A6%E7%BF%92+AI+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E8%258B%25B1%25E8%25AA%259E%2520%25E5%25AD%25A6%25E7%25BF%2592%2520AI%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>ノイズキャンセリングイヤホン</strong><span>集中して学ぶ環境に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%8E%E3%82%A4%E3%82%BA%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0+%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%258E%25E3%2582%25A4%25E3%2582%25BA%25E3%2582%25AD%25E3%2583%25A3%25E3%2583%25B3%25E3%2582%25BB%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25B0%2520%25E3%2582%25A4%25E3%2583%25A4%25E3%2583%259B%25E3%2583%25B3%2F">楽天</a></div></div><h2 id="s6">まとめ</h2>
+<p>苦手な分野をAIで学ぶときは、自分の理解度と目的を伝え、1テーマずつ質問しながら進めるのがポイントです。</p>
+<ul><li>基本のプロンプトで、学ぶ順番の提案と1テーマずつの説明を頼む</li><li>たとえ話・比較・確認問題など、角度を変えた質問で理解を深める</li><li>自分の言葉で説明してチェックしてもらい、重要な内容は信頼できる資料でも確認する</li></ul>
+<p>分からないことを何度でも聞ける相手がいると、苦手意識は少しずつ薄れていきます。まずは気になっていた分野のテーマを1つ選んで、試してみてください。</p></article><div class="related"><strong>関連記事</strong><div class="cards"><a class="card" href="../articles/english-email-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/english-email-prompt.jpg" alt=""><span class="tag">文章</span><span class="date">2026-10-13</span><h2>英語のメールをAIで書くプロンプト｜日本語から自然なビジネス英語へ</h2><p>英語のメールをAIに手伝ってもらうためのプロンプトを紹介します。日本語の要点から英文を作る基本形、受け取った英文メールの読解と返信、表現の確認まで、そのまま使える例文とうまくいかないときの直し方を解説します。</p></a><a class="card" href="../articles/excel-function-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/excel-function-prompt.jpg" alt=""><span class="tag">仕事</span><span class="date">2026-10-13</span><h2>Excelの関数をAIに教えてもらうプロンプト｜やりたいことから数式を作る</h2><p>Excelの関数や数式をAIに教えてもらうためのプロンプトを紹介します。やりたいことを伝えて数式を作ってもらう方法、エラーの原因を聞く方法、数式の意味を解説してもらう方法と、うまくいかないときの直し方を解説します。</p></a><a class="card" href="../articles/meal-plan-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/meal-plan-prompt.jpg" alt=""><span class="tag">暮らし</span><span class="date">2026-10-13</span><h2>献立をAIに考えてもらうプロンプト｜冷蔵庫の食材から1週間分まで</h2><p>毎日の献立をAIに考えてもらうためのプロンプトを紹介します。冷蔵庫にある食材から作れるメニュー、1週間分の献立と買い物リスト、家族の好みに合わせた調整まで、そのまま使える例文と、うまくいかないときの直し方をまとめました。</p></a></div></div></main>
+<footer><div class="wrap"><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div>© 2026 そのまま使えるAIプロンプト集</div></div></footer></body></html>

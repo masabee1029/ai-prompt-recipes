@@ -1,0 +1,82 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>議事録をAIにまとめてもらうプロンプト｜決定事項とToDoが一目でわかる｜そのまま使えるAIプロンプト集</title><meta name="description" content="会議のメモや文字起こしをAIに渡して、決定事項・ToDo・保留事項が整理された議事録を作るためのプロンプトを紹介します。そのまま使える例文と、うまくいかないときの直し方や確認のポイントもまとめました。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-prompt-recipes/articles/meeting-minutes-prompt.html"><meta property="og:title" content="議事録をAIにまとめてもらうプロンプト｜決定事項とToDoが一目でわかる｜そのまま使えるAIプロンプト集"><meta property="og:description" content="会議のメモや文字起こしをAIに渡して、決定事項・ToDo・保留事項が整理された議事録を作るためのプロンプトを紹介します。そのまま使える例文と、うまくいかないときの直し方や確認のポイントもまとめました。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-prompt-recipes/articles/meeting-minutes-prompt.html"><meta property="og:image" content="https://masabee1029.github.io/ai-prompt-recipes/img/articles/meeting-minutes-prompt.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--accent:#0f766e;--accent2:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--accent:#2dd4bf;--accent2:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+a{color:var(--accent)}header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+nav a{margin-left:14px;font-size:14px;color:var(--muted);text-decoration:none}nav a:first-child{margin-left:0}
+.pr{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line)}
+.hero{padding:40px 0 24px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:16px 0 40px}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px;margin-top:20px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 20px}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--accent)}.card h2{font-size:17px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+article{padding:28px 0 40px}article h1{font-size:26px;line-height:1.45}
+article h2{font-size:21px;border-left:5px solid var(--accent);padding-left:10px;margin-top:40px}
+article h3{font-size:18px;margin-top:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--card)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+.amz{background:#e88a00}.rkt{background:#bf0000}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 220px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.related{border-top:1px solid var(--line);padding-top:16px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:14px}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a>
+<nav><a href="../index.html">記事一覧</a><a href="../about.html">このサイトについて</a></nav></div>
+<div class="pr">※本ページはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div></div></header>
+<main class="wrap"><article><span class="tag">仕事</span><span class="date">2026-10-13</span><h1>議事録をAIにまとめてもらうプロンプト｜決定事項とToDoが一目でわかる</h1><img class="eyecatch" src="../img/articles/meeting-minutes-prompt.jpg" alt=""><div class="toc"><strong>目次</strong><ol><li><a href="#s1">AIに議事録を任せる前に知っておきたいこと</a></li><li><a href="#s2">基本の議事録プロンプト</a></li><li><a href="#s3">目的別にアレンジしたプロンプト</a></li><li><a href="#s4">仕上がりを良くするためのコツ</a></li><li><a href="#s5">うまくいかないときの直し方</a></li><li><a href="#s6">まとめ</a></li></ol></div><p>会議が終わったあと、議事録づくりに思った以上の時間がかかってしまうことはありませんか。<br>走り書きのメモや文字起こしをAIに渡せば、決定事項やToDoを整理した下書きを短時間で作ってもらえます。<br>この記事では、ChatGPT・Claude・Geminiなどの対話型AIでそのまま使える議事録用のプロンプトと、仕上がりを良くするコツを紹介します。</p>
+<div class="picks"><div class="picks-h">AIをもっと使いこなすために</div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>業務での使い方の幅が広がる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>基本から体系的に学べる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div></div><h2 id="s1">AIに議事録を任せる前に知っておきたいこと</h2>
+<p>AIは、バラバラなメモを読みやすい形に並べ替えたり、話題ごとに分けたりする作業が得意です。一方で、会議に出ていないAIには「誰が本当にそう言ったのか」「どこまでが決定でどこからが雑談なのか」を確実に判断することはできません。そのため、AIが作るのはあくまで<strong>下書き</strong>だと考え、最後は会議に出た人が確認する前提で使うのが安全です。</p>
+<p>また、議事録の元になるメモには、社外秘の情報や個人名、取引先の名前などが含まれやすいものです。AIサービスに入力した内容の扱いは、サービスや契約プラン、設定によって異なります（執筆時点）。会社のルールで利用が認められているかを確認し、<strong>機密情報や個人情報はそのまま貼り付けず</strong>、「A社」「担当者B」のように置き換えてから入力しましょう。</p>
+<h2 id="s2">基本の議事録プロンプト</h2>
+<p>まずは、どんな会議にも使える基本形です。【　】の部分を書き換え、最後にメモや文字起こしを貼り付けてください。</p>
+<div class="note">あなたは会議の記録係です。以下の会議メモをもとに、社内共有用の議事録を作成してください。<br>会議名：【　】<br>日時：【　】<br>参加者：【　】<br>出力の形式は次のとおりです。<br>1. 会議の目的（1〜2行）<br>2. 話し合った議題と要点（議題ごとに箇条書き）<br>3. 決定事項<br>4. ToDo（担当者・期限・内容を表形式で）<br>5. 保留事項・次回への持ち越し<br>メモに書かれていないことは推測で補わず、不明な点は「要確認」と書いてください。<br>会議メモ：【ここにメモを貼り付け】</div>
+<p>ポイントは「推測で補わず、不明な点は要確認と書く」という一文です。AIはもっともらしい内容で空白を埋めてしまうことがあるため、この指示を入れておくと、確認すべき箇所が見つけやすくなります。</p>
+<h2 id="s3">目的別にアレンジしたプロンプト</h2>
+<h3>上司や関係者に送る「3行サマリー」版</h3>
+<p>会議に出ていない人へ結果だけを伝えたいときは、短くまとめてもらうのが便利です。</p>
+<div class="note">以下の会議メモを、会議に参加していない上司へ報告するための要約にしてください。<br>条件：結論を最初に書く／全体で3行以内／決定事項と次のアクションを必ず含める／敬語で書く<br>会議メモ：【ここにメモを貼り付け】</div>
+<h3>文字起こしデータを整理する版</h3>
+<p>録音の文字起こしは「えー」「あの」などの言葉や言い直しが多く、そのままでは読みにくいものです。</p>
+<div class="note">以下は会議の文字起こしです。発言の意味を変えずに、口ぐせや言い直しを取り除き、話題ごとに見出しを付けて整理してください。<br>発言者がわかる箇所は「発言者名：内容」の形で残してください。<br>そのうえで、最後に決定事項とToDoを箇条書きで抜き出してください。<br>文字起こし：【ここに貼り付け】</div>
+<p>録音や文字起こしをする場合は、参加者に事前に伝えておくなど、社内のルールやマナーにも気を配りましょう。</p>
+<h2 id="s4">仕上がりを良くするためのコツ</h2>
+<p>議事録の質は、AIに渡すメモの質に大きく左右されます。次のような工夫をすると、整理の精度が上がりやすくなります。</p>
+<ul><li>メモの中で「決定」「宿題」「保留」などの印を付けておく</li><li>発言者の名前（または役割）をメモに残しておく</li><li>会議の目的やゴールを冒頭に一言書き添える</li><li>社内で決まった議事録のテンプレートがあれば、その見出しをプロンプトに含める</li></ul>
+<p>特に最後の点は効果的です。「以下のテンプレートに沿って埋めてください」と見出しを渡せば、毎回同じ形式の議事録がそろい、読む側も探しやすくなります。</p>
+<p>また、会議の直後にメモを渡すのがおすすめです。時間がたつと、メモに書かれていない前提や補足を自分でも思い出せなくなり、AIの下書きを確認する作業が難しくなります。会議が終わったらすぐに下書きを作り、記憶が新しいうちに見直すという流れにしておくと、確認の手間も少なくて済みます。</p>
+<p>定例会議のように毎回似た形式の会議であれば、一度うまくいったプロンプトをメモ帳などに保存しておき、会議名や日時だけを差し替えて使い回すと効率的です。</p>
+<div class="tbl"><table><tr><th>メモの状態</th><th>AIに頼むとよいこと</th></tr><tr><td>箇条書きの走り書き</td><td>議題ごとに分類し、文章に整える</td></tr><tr><td>長い文字起こし</td><td>口ぐせを除き、要点と決定事項を抽出する</td></tr><tr><td>すでに議事録の形</td><td>誤字や表記ゆれのチェック、要約版の作成</td></tr></table></div>
+<h2 id="s5">うまくいかないときの直し方</h2>
+<p>思ったような議事録にならないときは、次のように追加で指示を出してみてください。最初からやり直すより、会話を続けて直してもらうほうが早いことが多いです。</p>
+<ul><li><strong>長すぎる</strong>：「各議題を3行以内に短くしてください」と文字数や行数を指定する</li><li><strong>決定事項と意見が混ざる</strong>：「決定したことと、意見・提案にとどまったことを分けてください」と伝える</li><li><strong>ToDoの担当者が抜ける</strong>：「担当者が不明なToDoには『担当未定』と明記してください」と頼む</li><li><strong>内容が事実と違う</strong>：該当箇所を示し「この部分はメモのどこに基づいていますか」と確認する</li><li><strong>固い・柔らかすぎる</strong>：「社内チャットに貼る想定で、です・ます調の簡潔な文体に」と用途を伝える</li></ul>
+<p>どの場合も、AIの出力をそのまま配布せず、数字・日付・担当者名・決定内容は必ず元のメモや参加者の記憶と照らし合わせて確認しましょう。</p>
+<p>要約の指示の出し方をもっと知りたい方は、<a href="summarize-long-text-prompt.html">長い文章を要約させるプロンプトのコツ</a>もあわせて読んでみてください。</p>
+<div class="shop"><div class="shop-name">生成AIの仕事術の本を探す</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<div class="picks"><div class="picks-h">AI活用におすすめの本・道具</div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>業務での使い方の幅が広がる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>基本から体系的に学べる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>ノートパソコンスタンド</strong><span>長時間の作業を楽に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3+%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%258E%25E3%2583%25BC%25E3%2583%2588%25E3%2583%2591%25E3%2582%25BD%25E3%2582%25B3%25E3%2583%25B3%2520%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2583%2589%2F">楽天</a></div></div><h2 id="s6">まとめ</h2>
+<p>議事録づくりでAIを使うときは、「形式を指定する」「推測で補わせない」「最後は人が確認する」の3点を押さえることが大切です。</p>
+<ul><li>基本プロンプトで目的・議題・決定事項・ToDo・保留事項を整理する</li><li>報告用の短い要約や、文字起こしの整理などは目的別のプロンプトを使い分ける</li><li>機密情報や個人情報は置き換えてから入力し、出力内容は必ず事実確認する</li></ul>
+<p>まずは次の会議のメモで、基本のプロンプトを試してみてください。自分の職場の形式に合わせて少しずつ書き換えていくと、使いやすいテンプレートに育っていきます。</p></article><div class="related"><strong>関連記事</strong><div class="cards"><a class="card" href="../articles/excel-function-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/excel-function-prompt.jpg" alt=""><span class="tag">仕事</span><span class="date">2026-10-13</span><h2>Excelの関数をAIに教えてもらうプロンプト｜やりたいことから数式を作る</h2><p>Excelの関数や数式をAIに教えてもらうためのプロンプトを紹介します。やりたいことを伝えて数式を作ってもらう方法、エラーの原因を聞く方法、数式の意味を解説してもらう方法と、うまくいかないときの直し方を解説します。</p></a><a class="card" href="../articles/proposal-outline-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/proposal-outline-prompt.jpg" alt=""><span class="tag">仕事</span><span class="date">2026-10-13</span><h2>企画書の骨組みをAIと作るプロンプト｜白紙から構成案までの進め方</h2><p>企画書を書き始める前の「骨組み」づくりをAIに手伝ってもらうプロンプトを紹介します。目的や読み手を整理する質問から構成案、弱点の洗い出しまで、段階ごとに使える例文と、うまくいかないときの直し方をまとめました。</p></a></div></div></main>
+<footer><div class="wrap"><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div>© 2026 そのまま使えるAIプロンプト集</div></div></footer></body></html>

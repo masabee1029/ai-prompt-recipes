@@ -1,0 +1,85 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>長い文章をAIに要約させるプロンプトのコツ｜目的に合う要約を作る方法｜そのまま使えるAIプロンプト集</title><meta name="description" content="長い資料や記事をAIに要約してもらうときのプロンプトのコツを紹介します。目的・読み手・長さ・形式を指定する基本形から、段階的な要約や比較のしかた、うまくいかないときの直し方まで、そのまま使える例文付きで解説します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-prompt-recipes/articles/summarize-long-text-prompt.html"><meta property="og:title" content="長い文章をAIに要約させるプロンプトのコツ｜目的に合う要約を作る方法｜そのまま使えるAIプロンプト集"><meta property="og:description" content="長い資料や記事をAIに要約してもらうときのプロンプトのコツを紹介します。目的・読み手・長さ・形式を指定する基本形から、段階的な要約や比較のしかた、うまくいかないときの直し方まで、そのまま使える例文付きで解説します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-prompt-recipes/articles/summarize-long-text-prompt.html"><meta property="og:image" content="https://masabee1029.github.io/ai-prompt-recipes/img/articles/summarize-long-text-prompt.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--accent:#0f766e;--accent2:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--accent:#2dd4bf;--accent2:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+a{color:var(--accent)}header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+nav a{margin-left:14px;font-size:14px;color:var(--muted);text-decoration:none}nav a:first-child{margin-left:0}
+.pr{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line)}
+.hero{padding:40px 0 24px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:16px 0 40px}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px;margin-top:20px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 20px}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--accent)}.card h2{font-size:17px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+article{padding:28px 0 40px}article h1{font-size:26px;line-height:1.45}
+article h2{font-size:21px;border-left:5px solid var(--accent);padding-left:10px;margin-top:40px}
+article h3{font-size:18px;margin-top:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--card)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+.amz{background:#e88a00}.rkt{background:#bf0000}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 220px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.related{border-top:1px solid var(--line);padding-top:16px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:14px}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a>
+<nav><a href="../index.html">記事一覧</a><a href="../about.html">このサイトについて</a></nav></div>
+<div class="pr">※本ページはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div></div></header>
+<main class="wrap"><article><span class="tag">基本</span><span class="date">2026-10-13</span><h1>長い文章をAIに要約させるプロンプトのコツ｜目的に合う要約を作る方法</h1><img class="eyecatch" src="../img/articles/summarize-long-text-prompt.jpg" alt=""><div class="toc"><strong>目次</strong><ol><li><a href="#s1">「要約して」だけでは足りない理由</a></li><li><a href="#s2">そのまま使える基本の要約プロンプト</a></li><li><a href="#s3">目的別の要約プロンプト</a></li><li><a href="#s4">長い文章を扱うときの注意点</a></li><li><a href="#s5">うまくいかないときの直し方</a></li><li><a href="#s6">まとめ</a></li></ol></div><p>長い資料やレポート、記事を読む時間がないとき、AIに要約してもらうととても便利です。<br>ただ、「要約して」と頼むだけだと、欲しい情報が抜けていたり、長さが合わなかったりすることがあります。<br>この記事では、ChatGPT・Claude・Geminiなどで使える、目的に合った要約を引き出すためのプロンプトのコツを紹介します。</p>
+<div class="picks"><div class="picks-h">AIをもっと使いこなすために</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>最初の1冊に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの書き方の本</strong><span>指示文の型を学ぶ</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">「要約して」だけでは足りない理由</h2>
+<p>同じ文章でも、誰が何のために読むのかによって、良い要約の形は変わります。たとえば、会議で報告するための要約と、自分が後で読み返すためのメモとでは、残すべき情報も長さも違います。</p>
+<p>AIは、指定がなければ「一般的にほどよい要約」を作ろうとします。その結果、自分にとって大事なポイントが省かれてしまうこともあります。そこで、プロンプトでは次の4つを伝えることを意識しましょう。</p>
+<div class="tbl"><table><tr><th>伝えること</th><th>例</th></tr><tr><td>目的</td><td>会議での報告用／自分の理解用／判断材料として</td></tr><tr><td>読み手</td><td>上司／専門外の同僚／自分</td></tr><tr><td>長さ</td><td>3行／200字／箇条書き5点</td></tr><tr><td>形式</td><td>箇条書き／表／結論から書く文章</td></tr></table></div>
+<h2 id="s2">そのまま使える基本の要約プロンプト</h2>
+<p>まずは、4つの要素を入れた基本形です。【　】を書き換え、最後に文章を貼り付けて使います。</p>
+<div class="note">以下の文章を要約してください。<br>目的：【例：来週の会議で内容を報告するため】<br>読み手：【例：この分野に詳しくない上司】<br>長さ：【例：箇条書きで5点以内、各1行】<br>形式：最初に1文で結論を書き、そのあとに要点を箇条書きで並べる<br>条件：原文に書かれていないことは付け加えない／数字や固有名詞は原文どおりに残す／専門用語には短い説明を添える<br>文章：【ここに貼り付け】</div>
+<p>「原文に書かれていないことは付け加えない」という条件は特に大切です。AIは要約の途中で、自分の知識をもとに説明を補ってしまうことがあり、それが原文の内容と混ざると見分けがつかなくなります。</p>
+<h2 id="s3">目的別の要約プロンプト</h2>
+<h3>段階的に要約してもらう</h3>
+<p>全体像をつかんでから詳細を確認したいときは、要約の粒度を段階的に変えてもらう方法が便利です。</p>
+<div class="note">以下の文章を、3段階の詳しさで要約してください。<br>1. 1文での要約<br>2. 3行での要約<br>3. 見出しごとの要点（箇条書き）<br>文章：【ここに貼り付け】</div>
+<p>最初の1文で全体をつかみ、必要に応じて詳しい段階を読む、という使い方ができます。</p>
+<h3>要点と自分への影響を整理する</h3>
+<p>社内の通知や規約の変更など、「自分に何が関係するのか」を知りたいときに使えるプロンプトです。</p>
+<div class="note">以下の文章を読み、【例：一般社員】の立場で関係する点だけを抜き出してください。<br>「変更点」「自分がやるべきこと」「期限」に分けて、表にまとめてください。<br>該当する情報が文章に書かれていない場合は「記載なし」としてください。<br>文章：【ここに貼り付け】</div>
+<h3>複数の文章を比べながら要約する</h3>
+<p>似たテーマの資料が複数あるときは、まとめて比較してもらうと違いがつかみやすくなります。</p>
+<div class="note">以下の2つの文章を読み、共通している点と異なっている点を表にまとめてください。<br>比べる観点：【例：目的、対象者、手順、注意点】<br>それぞれの内容は原文に基づいて書き、どちらの文章にも書かれていない観点は「記載なし」としてください。<br>文章A：【ここに貼り付け】<br>文章B：【ここに貼り付け】</div>
+<p>比べる観点を先に指定しておくと、表の列がそろい、読み比べやすい結果になります。観点が思いつかない場合は、「比べるのに適した観点を先に提案してください」と頼んでから進めてもかまいません。</p>
+<h2 id="s4">長い文章を扱うときの注意点</h2>
+<p>AIが一度に読み込める文章の量には上限があり、その量はサービスやプランによって異なります（執筆時点）。非常に長い文章を貼り付けると、途中までしか読まれなかったり、後半の内容が要約に反映されにくかったりすることがあります。</p>
+<p>長い資料を扱うときは、次のような工夫をしてみてください。</p>
+<ul><li>章や見出しごとに分けて要約してもらい、最後に全体をまとめてもらう</li><li>「最後の段落まで読んだうえで要約してください」と明記する</li><li>要約のあとに「原文の後半で触れられている主な論点は何ですか」と確認する</li></ul>
+<p>また、要約したい文章が社内資料や顧客とのやり取りなどの場合は、機密情報や個人情報が含まれていないかを確認してください。入力した内容の扱いはサービスや設定によって異なるため、勤務先のルールに沿って、必要に応じて固有名詞を伏せてから入力しましょう。</p>
+<h2 id="s5">うまくいかないときの直し方</h2>
+<p>要約が期待どおりでないときは、会話を続けて修正を頼むのが効率的です。</p>
+<ul><li><strong>長すぎる・短すぎる</strong>：「200字以内に」「各項目を2行に」など、数字で指定し直す</li><li><strong>大事な点が抜けている</strong>：「【抜けている点】についても必ず含めてください」と具体的に伝える</li><li><strong>内容が正しいか不安</strong>：「各要点が原文のどの部分に基づくか、該当箇所を引用して示してください」と頼む</li><li><strong>難しくて読みにくい</strong>：「中学生でも分かる言葉に言い換えてください」と読み手のレベルを下げる</li><li><strong>主観が混ざる</strong>：「評価や意見は入れず、原文の内容だけをまとめてください」と伝える</li></ul>
+<p>根拠となる箇所を示してもらう方法は、要約の正確さを確かめるのに役立ちます。それでも、AIの要約には誤りや抜けが含まれる可能性があります。重要な判断に使う場合は、数字や結論の部分だけでも必ず原文と照らし合わせて確認してください。</p>
+<p>会議のメモを要約して議事録にしたい場合は、<a href="meeting-minutes-prompt.html">議事録をAIにまとめてもらうプロンプト</a>も参考になります。</p>
+<div class="shop"><div class="shop-name">生成AIの入門書を探す</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天で見る</a></div>
+<div class="picks"><div class="picks-h">AI活用におすすめの本・道具</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>最初の1冊に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの書き方の本</strong><span>指示文の型を学ぶ</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>実務での使い方</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s6">まとめ</h2>
+<p>AIに上手に要約してもらうためのコツは、「目的・読み手・長さ・形式」の4つを伝えることです。</p>
+<ul><li>基本のプロンプトに4つの要素と「原文にないことは足さない」条件を入れる</li><li>段階的な要約や、自分に関係する点の抽出など、目的に合わせて使い分ける</li><li>長い文章は分けて要約し、重要な部分は原文で確認する</li></ul>
+<p>要約は、AIの使い方の中でも特に日常的に役立つ場面の多い使い方です。まずは身近な記事や資料で、基本のプロンプトを試してみてください。</p></article><div class="related"><strong>関連記事</strong><div class="cards"><a class="card" href="../articles/role-prompt-basics.html"><img class="thumb" loading="lazy" src="../img/articles/role-prompt-basics.jpg" alt=""><span class="tag">基本</span><span class="date">2026-10-13</span><h2>AIに役割を与えるプロンプトの基本｜「あなたは〇〇です」の上手な使い方</h2><p>AIに「あなたは〇〇です」と役割を与えるプロンプトの基本を解説します。役割を与えると何が変わるのか、効果を高める書き方、複数の視点を出させる応用、うまくいかないときの直し方まで、例文付きで紹介します。</p></a></div></div></main>
+<footer><div class="wrap"><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div>© 2026 そのまま使えるAIプロンプト集</div></div></footer></body></html>

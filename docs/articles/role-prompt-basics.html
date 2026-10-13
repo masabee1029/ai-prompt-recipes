@@ -1,0 +1,82 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIに役割を与えるプロンプトの基本｜「あなたは〇〇です」の上手な使い方｜そのまま使えるAIプロンプト集</title><meta name="description" content="AIに「あなたは〇〇です」と役割を与えるプロンプトの基本を解説します。役割を与えると何が変わるのか、効果を高める書き方、複数の視点を出させる応用、うまくいかないときの直し方まで、例文付きで紹介します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-prompt-recipes/articles/role-prompt-basics.html"><meta property="og:title" content="AIに役割を与えるプロンプトの基本｜「あなたは〇〇です」の上手な使い方｜そのまま使えるAIプロンプト集"><meta property="og:description" content="AIに「あなたは〇〇です」と役割を与えるプロンプトの基本を解説します。役割を与えると何が変わるのか、効果を高める書き方、複数の視点を出させる応用、うまくいかないときの直し方まで、例文付きで紹介します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-prompt-recipes/articles/role-prompt-basics.html"><meta property="og:image" content="https://masabee1029.github.io/ai-prompt-recipes/img/articles/role-prompt-basics.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--accent:#0f766e;--accent2:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--accent:#2dd4bf;--accent2:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+a{color:var(--accent)}header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+nav a{margin-left:14px;font-size:14px;color:var(--muted);text-decoration:none}nav a:first-child{margin-left:0}
+.pr{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line)}
+.hero{padding:40px 0 24px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:16px 0 40px}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px;margin-top:20px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 20px}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--accent)}.card h2{font-size:17px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+article{padding:28px 0 40px}article h1{font-size:26px;line-height:1.45}
+article h2{font-size:21px;border-left:5px solid var(--accent);padding-left:10px;margin-top:40px}
+article h3{font-size:18px;margin-top:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--card)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+.amz{background:#e88a00}.rkt{background:#bf0000}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 220px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.related{border-top:1px solid var(--line);padding-top:16px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:14px}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a>
+<nav><a href="../index.html">記事一覧</a><a href="../about.html">このサイトについて</a></nav></div>
+<div class="pr">※本ページはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div></div></header>
+<main class="wrap"><article><span class="tag">基本</span><span class="date">2026-10-13</span><h1>AIに役割を与えるプロンプトの基本｜「あなたは〇〇です」の上手な使い方</h1><img class="eyecatch" src="../img/articles/role-prompt-basics.jpg" alt=""><div class="toc"><strong>目次</strong><ol><li><a href="#s1">役割を与えると何が変わるのか</a></li><li><a href="#s2">役割プロンプトの基本の型</a></li><li><a href="#s3">役割を使い分ける応用プロンプト</a></li><li><a href="#s4">うまくいかないときの直し方</a></li><li><a href="#s5">まとめ</a></li></ol></div><p>プロンプトの例を見ていると、「あなたは〇〇の専門家です」という書き出しをよく見かけます。<br>これは「役割を与える」と呼ばれる書き方で、AIの答えの方向性をそろえるのに役立ちます。<br>この記事では、ChatGPT・Claude・Geminiなどで使える、役割を与えるプロンプトの基本と上手な使い方を紹介します。</p>
+<div class="picks"><div class="picks-h">AIをもっと使いこなすために</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>最初の1冊に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの書き方の本</strong><span>指示文の型を学ぶ</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">役割を与えると何が変わるのか</h2>
+<p>AIに何も指定せずに質問すると、幅広い読み手を想定した、無難な答えが返ってくることが多くなります。そこに「あなたは〇〇です」と役割を与えると、その立場らしい視点や言葉づかい、説明の深さで答えてもらいやすくなります。</p>
+<p>たとえば同じ文章のチェックを頼む場合でも、「編集者」として頼めば読みやすさや構成に、「法務担当者」として頼めば表現上のリスクに注目した指摘が出やすくなります。役割は、AIに「どの角度から考えてほしいか」を伝える手段だと考えると分かりやすいでしょう。</p>
+<p>ただし、役割を与えたからといって、AIが本当にその分野の専門家になるわけではありません。専門家らしい口調で書かれていても、内容に誤りが含まれる可能性はあります。医療・法律・お金など重要な判断に関わることは、必ず実際の専門家や公的な情報で確認してください。</p>
+<h2 id="s2">役割プロンプトの基本の型</h2>
+<p>役割を与えるときは、役割の名前だけでなく、「誰のために」「何をするのか」をセットで伝えるのがポイントです。</p>
+<div class="note">あなたは【役割：例 新人研修を担当するベテラン社員】です。<br>相手は【誰に：例 社会人1年目の新入社員】です。<br>【目的：例 報告・連絡・相談の大切さ】について、相手が明日から実践できるように説明してください。<br>条件：専門用語は使わない／具体的な場面の例を3つ入れる／最後に要点を3行でまとめる</div>
+<p>役割だけを書いた場合と比べて、相手と目的が加わると、説明のレベルや内容がぐっと具体的になります。</p>
+<p>役割を書くときに意識したい要素を表にまとめました。</p>
+<div class="tbl"><table><tr><th>要素</th><th>書き方の例</th></tr><tr><td>役割</td><td>「経験豊富な編集者」「小学校の先生」</td></tr><tr><td>相手</td><td>「この分野が初めての人」「忙しい管理職」</td></tr><tr><td>目的</td><td>「判断材料を整理する」「やる気を引き出す」</td></tr><tr><td>姿勢</td><td>「厳しめに指摘する」「励ましながら教える」</td></tr></table></div>
+<h2 id="s3">役割を使い分ける応用プロンプト</h2>
+<h3>複数の立場から意見を出してもらう</h3>
+<p>一つの案を、いくつかの立場から見てもらうと、自分では気づきにくい視点が見つかります。</p>
+<div class="note">以下のアイデアについて、3つの立場からそれぞれ意見を述べてください。<br>1. 利用者の立場<br>2. 予算を管理する立場<br>3. 実際に運用する現場担当者の立場<br>各立場から、良い点と心配な点を2つずつ挙げ、最後に全体として検討すべきことをまとめてください。<br>アイデア：【ここに内容を書く】</div>
+<h3>練習相手になってもらう</h3>
+<p>面接や商談、プレゼンの練習相手としても、役割の指定は役立ちます。</p>
+<div class="note">あなたは【例：採用面接の面接官】です。これから私と面接の練習をしてください。<br>質問は一度に1つだけ出し、私が答えたら、良かった点と改善点を短く伝えてから次の質問に進んでください。<br>全部で5問行い、最後に全体の講評をしてください。</div>
+<h3>自分に合う役割をAIに相談する</h3>
+<p>どんな役割を与えればよいか迷うときは、役割そのものをAIに提案してもらう方法もあります。</p>
+<div class="note">私は【やりたいこと：例 社内向けの研修資料を分かりやすくしたい】と考えています。<br>この作業を手伝ってもらうのに適した役割の候補を3つ挙げ、それぞれの役割に頼むと、どんな視点の助言が得られそうかを説明してください。</div>
+<p>提案された役割の中から選んで、改めて基本の型に当てはめて頼むと、目的に合った答えを引き出しやすくなります。役割は一つに決める必要はなく、作業の段階ごとに変えてもかまいません。たとえば、最初は「アイデアを広げる企画担当者」、次に「内容を厳しく確かめる校閲担当者」というように切り替えると、考えを広げる作業と絞り込む作業を分けて進められます。</p>
+<p>練習の内容に、実在の会社の内部情報や他人の個人情報を含める必要はありません。架空の設定や一般化した状況で十分に練習できます。</p>
+<h2 id="s4">うまくいかないときの直し方</h2>
+<p>役割を与えても思ったような答えにならないときは、次のような点を見直してみてください。</p>
+<ul><li><strong>役割らしさが出ない</strong>：「〇〇の立場として、特に何を重視して考えるかを最初に述べてから答えてください」と頼む</li><li><strong>口調だけが変わって中身が薄い</strong>：役割に加えて「相手」と「目的」を具体的に書き足す</li><li><strong>言い切りすぎていて不安</strong>：「確実に言えることと、確認が必要なことを分けて書いてください」と頼む</li><li><strong>途中で役割を忘れる</strong>：会話が長くなったら「引き続き〇〇の立場で答えてください」と改めて伝える</li><li><strong>厳しすぎる・甘すぎる</strong>：「もう少し前向きな言い方で」「遠慮せずに率直に」と姿勢を調整する</li></ul>
+<p>役割を与えると、AIは自信のある口調で答えやすくなります。そのため、内容の正しさを確かめる意識がいっそう大切です。数字や事実、専門的な判断は、信頼できる資料で確認してから使いましょう。また、どの役割で使う場合でも、機密情報や個人情報はそのまま入力しないように注意してください。入力内容の扱いはサービスや設定によって異なります（執筆時点）。</p>
+<p>役割を使った具体例は、<a href="proposal-outline-prompt.html">企画書の骨組みを作るプロンプト</a>や<a href="learn-weak-subject-prompt.html">苦手な分野を学ぶための質問プロンプト</a>でも紹介しています。</p>
+<div class="shop"><div class="shop-name">プロンプトの書き方の本を探す</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9B%B8%E3%81%8D%E6%96%B9+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259B%25B8%25E3%2581%258D%25E6%2596%25B9%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<div class="picks"><div class="picks-h">AI活用におすすめの本・道具</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>最初の1冊に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの書き方の本</strong><span>指示文の型を学ぶ</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>実務での使い方</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s5">まとめ</h2>
+<p>AIに役割を与えるプロンプトは、答えの視点や説明の深さをそろえるための基本的なテクニックです。</p>
+<ul><li>役割だけでなく「相手」と「目的」をセットで伝える</li><li>複数の立場から意見を出させたり、練習相手になってもらったりと応用できる</li><li>専門家らしい口調でも内容は誤ることがあるため、重要な情報は必ず確認する</li></ul>
+<p>いつものプロンプトの最初に一行、役割を書き足すだけでも答えの印象は変わります。気軽に試して、自分の使い方に合う役割を見つけてみてください。</p></article><div class="related"><strong>関連記事</strong><div class="cards"><a class="card" href="../articles/summarize-long-text-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/summarize-long-text-prompt.jpg" alt=""><span class="tag">基本</span><span class="date">2026-10-13</span><h2>長い文章をAIに要約させるプロンプトのコツ｜目的に合う要約を作る方法</h2><p>長い資料や記事をAIに要約してもらうときのプロンプトのコツを紹介します。目的・読み手・長さ・形式を指定する基本形から、段階的な要約や比較のしかた、うまくいかないときの直し方まで、そのまま使える例文付きで解説します。</p></a></div></div></main>
+<footer><div class="wrap"><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div>© 2026 そのまま使えるAIプロンプト集</div></div></footer></body></html>

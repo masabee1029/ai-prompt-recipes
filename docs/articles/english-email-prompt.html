@@ -1,0 +1,82 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英語のメールをAIで書くプロンプト｜日本語から自然なビジネス英語へ｜そのまま使えるAIプロンプト集</title><meta name="description" content="英語のメールをAIに手伝ってもらうためのプロンプトを紹介します。日本語の要点から英文を作る基本形、受け取った英文メールの読解と返信、表現の確認まで、そのまま使える例文とうまくいかないときの直し方を解説します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-prompt-recipes/articles/english-email-prompt.html"><meta property="og:title" content="英語のメールをAIで書くプロンプト｜日本語から自然なビジネス英語へ｜そのまま使えるAIプロンプト集"><meta property="og:description" content="英語のメールをAIに手伝ってもらうためのプロンプトを紹介します。日本語の要点から英文を作る基本形、受け取った英文メールの読解と返信、表現の確認まで、そのまま使える例文とうまくいかないときの直し方を解説します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-prompt-recipes/articles/english-email-prompt.html"><meta property="og:image" content="https://masabee1029.github.io/ai-prompt-recipes/img/articles/english-email-prompt.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--accent:#0f766e;--accent2:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--accent:#2dd4bf;--accent2:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+a{color:var(--accent)}header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+nav a{margin-left:14px;font-size:14px;color:var(--muted);text-decoration:none}nav a:first-child{margin-left:0}
+.pr{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line)}
+.hero{padding:40px 0 24px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:16px 0 40px}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px;margin-top:20px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 20px}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--accent)}.card h2{font-size:17px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+article{padding:28px 0 40px}article h1{font-size:26px;line-height:1.45}
+article h2{font-size:21px;border-left:5px solid var(--accent);padding-left:10px;margin-top:40px}
+article h3{font-size:18px;margin-top:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--card)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+.amz{background:#e88a00}.rkt{background:#bf0000}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 220px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.related{border-top:1px solid var(--line);padding-top:16px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:14px}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a>
+<nav><a href="../index.html">記事一覧</a><a href="../about.html">このサイトについて</a></nav></div>
+<div class="pr">※本ページはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div></div></header>
+<main class="wrap"><article><span class="tag">文章</span><span class="date">2026-10-13</span><h1>英語のメールをAIで書くプロンプト｜日本語から自然なビジネス英語へ</h1><img class="eyecatch" src="../img/articles/english-email-prompt.jpg" alt=""><div class="toc"><strong>目次</strong><ol><li><a href="#s1">翻訳ではなく「メールを書いてもらう」意識で頼む</a></li><li><a href="#s2">そのまま使える基本の英語メールプロンプト</a></li><li><a href="#s3">受け取った英文メールに返信する</a></li><li><a href="#s4">場面別に使える表現を聞く</a></li><li><a href="#s5">うまくいかないときの直し方</a></li><li><a href="#s6">まとめ</a></li></ol></div><p>英語のメールを書くとき、文法や言い回しに自信がなくて時間がかかってしまう方は多いのではないでしょうか。<br>AIに伝えたい内容を日本語で渡せば、場面に合った英文の下書きを作ってもらえます。<br>この記事では、ChatGPT・Claude・Geminiなどで使える、英語メール作成のためのプロンプトを紹介します。</p>
+<div class="picks"><div class="picks-h">AIをもっと使いこなすために</div><div class="pick"><div><strong>文章術の本</strong><span>AIの文章を直す力がつく</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E6%96%87%E7%AB%A0%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E6%2596%2587%25E7%25AB%25A0%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの書き方の本</strong><span>指示文の型を増やす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">翻訳ではなく「メールを書いてもらう」意識で頼む</h2>
+<p>日本語の文章をそのまま英訳してもらうと、英語として不自然になったり、回りくどくなったりすることがあります。日本語のメールには時候のあいさつや前置きが多く、そのまま訳すと英語圏の読み手には要点が分かりにくくなることがあるためです。</p>
+<p>そこでおすすめなのが、「日本語の文章」ではなく「伝えたい要点」を渡して、英語のメールとして組み立ててもらう方法です。相手との関係や目的もあわせて伝えると、丁寧さの度合いも調整してもらえます。</p>
+<h2 id="s2">そのまま使える基本の英語メールプロンプト</h2>
+<p>伝えたい要点を箇条書きで渡すのがポイントです。【　】を書き換えて使ってください。</p>
+<div class="note">あなたはビジネス英語のメールに詳しいアシスタントです。以下の要点をもとに、英語のメールを作成してください。<br>相手：【例：海外の取引先の担当者。やり取りは3回目】<br>目的：【例：打ち合わせの日程変更をお願いする】<br>伝えたい要点：【例：予定していた日に出張が入った／翌週の火曜か水曜を提案したい／迷惑をかけることへのお詫び】<br>トーン：【例：丁寧だが堅すぎない】<br>条件：件名も作る／簡潔に書く／英文のあとに日本語訳を付ける<br>自然な英語にするために変えた点があれば、日本語で説明してください。</div>
+<p>要点は完璧な日本語の文章でなくてもかまいません。箇条書きの短いメモでも、AIは文脈を補ってメールの形に整えてくれます。ただし、日付・時間・数量などは誤解のないよう正確に書いておきましょう。時差のある相手とのやり取りでは、「日本時間で」のように基準となる時間帯を明記しておくと安心です。</p>
+<p>日本語訳を付けてもらうと、自分の意図どおりの内容になっているかを確認できます。「変えた点の説明」を頼んでおくと、英語のメールの書き方を学ぶ材料にもなります。</p>
+<h2 id="s3">受け取った英文メールに返信する</h2>
+<p>英語のメールを受け取ったときは、内容の理解と返信の作成をまとめて頼むことができます。</p>
+<div class="note">以下の英文メールについて、次の3つを行ってください。<br>1. 日本語での要約（相手が求めていることを中心に）<br>2. 返信で答えるべき点のリスト<br>3. 返信の英文の下書き（私の回答は【例：資料は金曜までに送る／価格の件は社内で確認中】）<br>受け取ったメール：【相手の名前や会社名を伏せて貼り付け】</div>
+<p>返信で答えるべき点をリストにしてもらうと、質問への答え漏れを防げます。</p>
+<h2 id="s4">場面別に使える表現を聞く</h2>
+<p>メール全体ではなく、特定の言い回しに迷うときは、複数の候補を出してもらうと便利です。</p>
+<div class="note">英語のビジネスメールで「【例：念のため確認させてください】」と伝えたいです。<br>丁寧さの違う表現を3つ挙げ、それぞれのニュアンスと使う場面を日本語で説明してください。</div>
+<p>よく使う場面と、AIに伝えると良い情報をまとめました。</p>
+<div class="tbl"><table><tr><th>場面</th><th>プロンプトに入れたい情報</th></tr><tr><td>初めての連絡</td><td>自分の立場、連絡した理由、相手に求めること</td></tr><tr><td>催促</td><td>何の件か、元の期限、相手との関係</td></tr><tr><td>お詫び</td><td>何が起きたか、対応策、今後の対策</td></tr><tr><td>お礼</td><td>何に対するお礼か、今後もお願いしたいこと</td></tr></table></div>
+<h3>自分で書いた英文をチェックしてもらう</h3>
+<p>英語の練習も兼ねたいときは、まず自分で英文を書き、AIに添削してもらう使い方もおすすめです。</p>
+<div class="note">以下は私が書いた英語のメールです。ビジネスメールとして不自然な点や文法の誤りを直してください。<br>直した箇所ごとに、元の表現・修正後の表現・理由を表にまとめてください。<br>意味が大きく変わる修正をする場合は、必ずその旨を書いてください。<br>私の英文：【ここに貼り付け】</div>
+<p>修正の理由を表で確認できるので、同じ間違いを繰り返しにくくなります。全部をAIに書いてもらうより時間はかかりますが、少しずつ自分の力で書ける表現が増えていくのが利点です。急ぎのメールは基本のプロンプト、時間に余裕があるときは添削のプロンプト、というように使い分けるとよいでしょう。</p>
+<h2 id="s5">うまくいかないときの直し方</h2>
+<p>AIの英文が使いにくいと感じたら、次のように調整を頼んでみてください。</p>
+<ul><li><strong>堅すぎる</strong>：「同僚に送る程度のカジュアルさにしてください」と相手との距離感を伝える</li><li><strong>長すぎる</strong>：「本文を5文以内にしてください」と文の数で指定する</li><li><strong>意図と違う</strong>：日本語訳の該当箇所を示し、「ここは【本来の意図】という意味にしたいです」と伝える</li><li><strong>表現が正しいか不安</strong>：「この英文に文法の誤りや不自然な点がないか確認し、あれば理由とともに直してください」と別に頼む</li><li><strong>地域による違いが気になる</strong>：「アメリカ英語で」「イギリス英語で」など希望を伝える</li></ul>
+<p>AIが作る英文は自然なことが多いものの、誤りや意図とずれた表現が含まれる可能性はあります。日付・金額・数量・固有名詞などの重要な情報は必ず自分で確認し、契約や交渉など重要な内容のメールは、英語に詳しい人に見てもらうことも検討してください。</p>
+<p>また、受け取ったメールや社内の情報を貼り付けるときは、相手の個人名・連絡先・取引条件などの機密情報や個人情報を伏せてから入力しましょう。入力内容の扱いはサービスや設定によって異なります（執筆時点）。</p>
+<p>断りの連絡を英語で書きたいときは、<a href="polite-decline-email-prompt.html">断りのメールを角を立てずに書くプロンプト</a>の条件を英語メール用に応用するのもおすすめです。</p>
+<div class="shop"><div class="shop-name">英語メールの表現集を探す</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E8%8B%B1%E8%AA%9E+%E3%83%A1%E3%83%BC%E3%83%AB+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2593%25E3%2582%25B8%25E3%2583%258D%25E3%2582%25B9%25E8%258B%25B1%25E8%25AA%259E%2520%25E3%2583%25A1%25E3%2583%25BC%25E3%2583%25AB%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<div class="picks"><div class="picks-h">AI活用におすすめの本・道具</div><div class="pick"><div><strong>文章術の本</strong><span>AIの文章を直す力がつく</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E6%96%87%E7%AB%A0%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E6%2596%2587%25E7%25AB%25A0%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの書き方の本</strong><span>指示文の型を増やす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>ワイヤレスキーボード</strong><span>入力を快適に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%25AF%25E3%2582%25A4%25E3%2583%25A4%25E3%2583%25AC%25E3%2582%25B9%25E3%2582%25AD%25E3%2583%25BC%25E3%2583%259C%25E3%2583%25BC%25E3%2583%2589%2F">楽天</a></div></div><h2 id="s6">まとめ</h2>
+<p>英語のメールをAIに手伝ってもらうときは、日本語の文章を訳させるのではなく、要点と状況を伝えて「メールを書いてもらう」ことがポイントです。</p>
+<ul><li>相手・目的・要点・トーンを伝え、日本語訳も付けてもらう</li><li>受け取ったメールは、要約・答えるべき点・返信案をまとめて頼む</li><li>重要な情報は自分で確認し、機密情報は伏せて入力する</li></ul>
+<p>日本語訳や説明を読みながら使っていくと、少しずつ英語メールの型も身についていきます。まずは短いメールから試してみてください。</p></article><div class="related"><strong>関連記事</strong><div class="cards"><a class="card" href="../articles/polite-decline-email-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/polite-decline-email-prompt.jpg" alt=""><span class="tag">文章</span><span class="date">2026-10-13</span><h2>断りのメールを角を立てずに書くプロンプト｜依頼・誘い・営業に使える</h2><p>仕事の依頼や誘い、営業の連絡などを、相手との関係を保ちながら断るメールをAIに下書きしてもらうプロンプトを紹介します。状況別の例文と、うまくいかないときの直し方、送る前に確認したいポイントも解説します。</p></a></div></div></main>
+<footer><div class="wrap"><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div>© 2026 そのまま使えるAIプロンプト集</div></div></footer></body></html>

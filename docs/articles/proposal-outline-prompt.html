@@ -1,0 +1,81 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>企画書の骨組みをAIと作るプロンプト｜白紙から構成案までの進め方｜そのまま使えるAIプロンプト集</title><meta name="description" content="企画書を書き始める前の「骨組み」づくりをAIに手伝ってもらうプロンプトを紹介します。目的や読み手を整理する質問から構成案、弱点の洗い出しまで、段階ごとに使える例文と、うまくいかないときの直し方をまとめました。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-prompt-recipes/articles/proposal-outline-prompt.html"><meta property="og:title" content="企画書の骨組みをAIと作るプロンプト｜白紙から構成案までの進め方｜そのまま使えるAIプロンプト集"><meta property="og:description" content="企画書を書き始める前の「骨組み」づくりをAIに手伝ってもらうプロンプトを紹介します。目的や読み手を整理する質問から構成案、弱点の洗い出しまで、段階ごとに使える例文と、うまくいかないときの直し方をまとめました。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-prompt-recipes/articles/proposal-outline-prompt.html"><meta property="og:image" content="https://masabee1029.github.io/ai-prompt-recipes/img/articles/proposal-outline-prompt.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--accent:#0f766e;--accent2:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--accent:#2dd4bf;--accent2:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+a{color:var(--accent)}header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+nav a{margin-left:14px;font-size:14px;color:var(--muted);text-decoration:none}nav a:first-child{margin-left:0}
+.pr{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line)}
+.hero{padding:40px 0 24px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:16px 0 40px}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px;margin-top:20px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 20px}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--accent)}.card h2{font-size:17px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+article{padding:28px 0 40px}article h1{font-size:26px;line-height:1.45}
+article h2{font-size:21px;border-left:5px solid var(--accent);padding-left:10px;margin-top:40px}
+article h3{font-size:18px;margin-top:28px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--card)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+.amz{background:#e88a00}.rkt{background:#bf0000}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 220px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.related{border-top:1px solid var(--line);padding-top:16px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:14px}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a>
+<nav><a href="../index.html">記事一覧</a><a href="../about.html">このサイトについて</a></nav></div>
+<div class="pr">※本ページはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div></div></header>
+<main class="wrap"><article><span class="tag">仕事</span><span class="date">2026-10-13</span><h1>企画書の骨組みをAIと作るプロンプト｜白紙から構成案までの進め方</h1><img class="eyecatch" src="../img/articles/proposal-outline-prompt.jpg" alt=""><div class="toc"><strong>目次</strong><ol><li><a href="#s1">企画書づくりでAIが役立つ場面</a></li><li><a href="#s2">ステップ1：AIに質問してもらって考えを整理する</a></li><li><a href="#s3">ステップ2：構成案を作ってもらう</a></li><li><a href="#s4">ステップ3：弱点と想定質問を洗い出す</a></li><li><a href="#s5">うまくいかないときの直し方</a></li><li><a href="#s6">まとめ</a></li></ol></div><p>企画書を作ろうとしても、白紙の画面を前に手が止まってしまうことはよくあります。<br>そんなときは、いきなり完成品を作らせるのではなく、AIと一緒に「骨組み」から考えるのがおすすめです。<br>この記事では、ChatGPT・Claude・Geminiなどで使える、企画書の構成づくりのためのプロンプトを段階ごとに紹介します。</p>
+<div class="picks"><div class="picks-h">AIをもっと使いこなすために</div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>業務での使い方の幅が広がる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>基本から体系的に学べる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div></div><h2 id="s1">企画書づくりでAIが役立つ場面</h2>
+<p>企画書の中身、つまりアイデアの核や現場の事情、社内の判断材料は、あなたにしか分からない部分です。一方でAIは、考えを整理するための質問を投げかけたり、一般的な構成の型を提案したり、抜けている観点を指摘したりするのが得意です。</p>
+<p>そこでこの記事では、次の3段階でAIを使う方法を紹介します。</p>
+<ol><li>AIに質問してもらい、企画の目的や読み手を整理する</li><li>整理した内容をもとに、見出しレベルの構成案を作る</li><li>構成案の弱点や、想定される質問を洗い出す</li></ol>
+<p>この順番で進めると、AIに丸投げした場合に比べて、自分の考えが反映された企画書になりやすくなります。</p>
+<h2 id="s2">ステップ1：AIに質問してもらって考えを整理する</h2>
+<p>最初は、AIに「聞き役」になってもらいます。自分の頭の中にあるぼんやりとしたアイデアを、質問に答える形で言葉にしていきます。</p>
+<div class="note">あなたは企画書づくりを手伝う編集者です。私はこれから【企画の大まかなテーマ】について企画書を作ろうとしています。<br>企画書の骨組みを作るために必要な情報を、私に質問してください。<br>条件：質問は一度に3つまで／目的・読み手・課題・解決策・必要なリソース・スケジュールの観点を順にカバーする／私の答えが曖昧なら掘り下げて聞き返す<br>必要な情報がそろったら「整理が終わりました」と伝え、内容を箇条書きでまとめてください。</div>
+<p>一度にたくさん質問されると答えるのが大変なので、「一度に3つまで」と制限しておくのがコツです。会話を何往復かするうちに、企画の目的や読み手が自然と整理されていきます。</p>
+<h2 id="s3">ステップ2：構成案を作ってもらう</h2>
+<p>整理ができたら、その内容をもとに企画書の構成案を作ってもらいます。ステップ1と同じ会話の中で続けると、前の内容を踏まえて提案してもらえます。</p>
+<div class="note">ここまで整理した内容をもとに、企画書の構成案を作ってください。<br>読み手：【例：部長会議の参加者】<br>企画書の分量：【例：スライド10枚程度／A4で3枚程度】<br>条件：各見出しに「そこで伝えるべきこと」を1〜2行で添える／読み手が判断に必要な情報（費用対効果、リスク、スケジュールなど）を入れる／構成案は2パターン出し、それぞれの違いを説明する</div>
+<p>構成案は、あくまで見出しと要点のレベルにとどめるのがおすすめです。この段階で本文まで書かせると、自分の考えより一般論が多い企画書になりやすいためです。</p>
+<p>一般的な企画書の構成の例を表にまとめました。AIの提案と見比べる参考にしてください。</p>
+<div class="tbl"><table><tr><th>見出しの例</th><th>伝える内容</th></tr><tr><td>背景・現状の課題</td><td>なぜ今この企画が必要なのか</td></tr><tr><td>企画の目的</td><td>何を実現したいのか</td></tr><tr><td>企画の内容</td><td>具体的に何をするのか</td></tr><tr><td>期待される効果</td><td>実施するとどう良くなるのか</td></tr><tr><td>必要なリソース</td><td>人・予算・期間など</td></tr><tr><td>リスクと対策</td><td>想定される問題とその備え</td></tr><tr><td>スケジュール</td><td>いつ何をするのか</td></tr></table></div>
+<h2 id="s4">ステップ3：弱点と想定質問を洗い出す</h2>
+<p>構成が決まったら、AIに「厳しい読み手」役をお願いして、弱いところを指摘してもらいます。</p>
+<div class="note">あなたは企画を審査する立場の、慎重な管理職です。以下の企画書の構成案を読み、判断する立場から見た弱点と、会議で聞かれそうな質問を5つずつ挙げてください。<br>それぞれについて、補強するために追加すべき情報も提案してください。<br>構成案：【ここに構成案を貼り付け】</div>
+<p>想定質問を事前に知っておくと、資料の補強だけでなく、説明の準備にも役立ちます。</p>
+<p>さらに、企画のタイトルや冒頭の一文に迷ったときも、AIに候補を出してもらうと考えるきっかけになります。</p>
+<div class="note">以下の企画の内容をもとに、企画書のタイトル案を5つ出してください。<br>条件：読み手が一目で目的を理解できる／20字以内／誇張した表現は使わない<br>企画の要点：【ここに要点を箇条書きで書く】</div>
+<p>候補を見比べると、「自分が一番伝えたいのはどの点か」がはっきりしてくることがあります。そのまま採用するのではなく、気に入った言葉を組み合わせて自分で仕上げるくらいの気持ちで使うのがおすすめです。AIに役割を与えるプロンプトについては、<a href="role-prompt-basics.html">AIに役割を与えるプロンプトの基本</a>で詳しく解説しています。</p>
+<h2 id="s5">うまくいかないときの直し方</h2>
+<p>AIの提案がしっくりこないときは、次のような追加指示を試してみてください。</p>
+<ul><li><strong>ありきたりな構成になる</strong>：「この企画ならではの強みが伝わる見出しを入れてください」と伝え、強みを具体的に書き添える</li><li><strong>見出しが多すぎる</strong>：「見出しは6つ以内にしてください」と数を指定する</li><li><strong>読み手に合っていない</strong>：「読み手は技術に詳しくない経営層です」など、相手の立場を具体的に伝える</li><li><strong>AIが数字を入れてくる</strong>：「数値は入れず【要調査】と書いてください」と指示し、自分で調べた正確な数字を後から入れる</li></ul>
+<p>特に注意したいのが最後の点です。AIは市場規模や効果の見込みなどを、それらしい数字で書いてしまうことがあります。企画書に載せる数字や事実は、必ず信頼できる資料で確認してください。また、社外秘の計画や顧客情報、未発表の数値などは入力せず、伏せたり一般化したりして相談しましょう。入力内容の扱いはサービスや設定によって異なります（執筆時点）。</p>
+<div class="shop"><div class="shop-name">企画書の書き方の本を探す</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E4%BC%81%E7%94%BB%E6%9B%B8+%E6%9B%B8%E3%81%8D%E6%96%B9+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E4%25BC%2581%25E7%2594%25BB%25E6%259B%25B8%2520%25E6%259B%25B8%25E3%2581%258D%25E6%2596%25B9%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<div class="picks"><div class="picks-h">AI活用におすすめの本・道具</div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>業務での使い方の幅が広がる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>基本から体系的に学べる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>ノートパソコンスタンド</strong><span>長時間の作業を楽に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3+%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%258E%25E3%2583%25BC%25E3%2583%2588%25E3%2583%2591%25E3%2582%25BD%25E3%2582%25B3%25E3%2583%25B3%2520%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2583%2589%2F">楽天</a></div></div><h2 id="s6">まとめ</h2>
+<p>企画書づくりにAIを使うときは、完成品を一度に作らせるのではなく、段階を分けて相談するのがポイントです。</p>
+<ul><li>ステップ1：AIに質問してもらい、目的や読み手を整理する</li><li>ステップ2：見出しと要点だけの構成案を複数出してもらう</li><li>ステップ3：厳しい読み手の役で、弱点と想定質問を洗い出してもらう</li></ul>
+<p>骨組みがしっかりしていれば、本文を書く作業もずっと楽になります。数字や事実の確認、機密情報の扱いに気をつけながら、AIを考える相棒として活用してみてください。</p></article><div class="related"><strong>関連記事</strong><div class="cards"><a class="card" href="../articles/excel-function-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/excel-function-prompt.jpg" alt=""><span class="tag">仕事</span><span class="date">2026-10-13</span><h2>Excelの関数をAIに教えてもらうプロンプト｜やりたいことから数式を作る</h2><p>Excelの関数や数式をAIに教えてもらうためのプロンプトを紹介します。やりたいことを伝えて数式を作ってもらう方法、エラーの原因を聞く方法、数式の意味を解説してもらう方法と、うまくいかないときの直し方を解説します。</p></a><a class="card" href="../articles/meeting-minutes-prompt.html"><img class="thumb" loading="lazy" src="../img/articles/meeting-minutes-prompt.jpg" alt=""><span class="tag">仕事</span><span class="date">2026-10-13</span><h2>議事録をAIにまとめてもらうプロンプト｜決定事項とToDoが一目でわかる</h2><p>会議のメモや文字起こしをAIに渡して、決定事項・ToDo・保留事項が整理された議事録を作るためのプロンプトを紹介します。そのまま使える例文と、うまくいかないときの直し方や確認のポイントもまとめました。</p></a></div></div></main>
+<footer><div class="wrap"><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div>© 2026 そのまま使えるAIプロンプト集</div></div></footer></body></html>
