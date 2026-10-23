@@ -445,5 +445,100 @@
     "src": "楽天"
    }
   ]
- }
+ },
+ "vc_title": "あわせて使えるサービス（PR）",
+ "vc_ads": [
+  {
+   "name": "PLAUD（AIボイスレコーダー）",
+   "note": "会議を録るだけで、AIが文字起こしと要約をしてくれる",
+   "btn": "公式ストアを見る",
+   "cats": [
+    "仕事"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTL+7QPYI+5J4W+5YRHE",
+   "beacon": "https://www16.a8.net/0.gif?a8mat=4BELTL+7QPYI+5J4W+5YRHE"
+  },
+  {
+   "name": "MiriCanvas（AIプレゼン）",
+   "note": "話す内容を入れると、AIがスライドの形にしてくれる",
+   "btn": "無料で試す",
+   "cats": [
+    "仕事",
+    "基本"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTL+APVZE+5EX8+BX3J6",
+   "beacon": "https://www16.a8.net/0.gif?a8mat=4BELTL+APVZE+5EX8+BX3J6"
+  },
+  {
+   "name": "ConoHa AI Canvas",
+   "note": "インストールなしで、ブラウザだけでAI画像を作れる",
+   "btn": "公式サイトを見る",
+   "cats": [
+    "基本",
+    "暮らし"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTL+BWR6Y+50+7RTY1E",
+   "beacon": "https://www12.a8.net/0.gif?a8mat=4BELTL+BWR6Y+50+7RTY1E"
+  },
+  {
+   "name": "エックスサーバー",
+   "note": "AIで書いた文章を、自分のブログで発信できる",
+   "btn": "公式サイトを見る",
+   "cats": [
+    "文章"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDQ+GHL97U+CO4+61C2Q",
+   "beacon": "https://www19.a8.net/0.gif?a8mat=4BENDQ+GHL97U+CO4+61C2Q"
+  },
+  {
+   "name": "ConoHa WING（レンタルサーバー）",
+   "note": "ブログを始める場所を、初期費用なしで用意できる",
+   "btn": "公式サイトを見る",
+   "cats": [
+    "文章"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDQ+GIS4FE+50+5SIUWY",
+   "beacon": "https://www14.a8.net/0.gif?a8mat=4BENDQ+GIS4FE+50+5SIUWY"
+  },
+  {
+   "name": "シンレンタルサーバー",
+   "note": "WordPressのブログを、速いサーバーで始められる",
+   "btn": "公式サイトを見る",
+   "cats": [
+    "文章"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDQ+G9UMCQ+5GDG+5ZEMQ",
+   "beacon": "https://www10.a8.net/0.gif?a8mat=4BENDQ+G9UMCQ+5GDG+5ZEMQ"
+  },
+  {
+   "name": "GMKtec（ミニPC）",
+   "note": "机に置ける小さなPCで、AIの勉強用の1台に",
+   "btn": "公式ストアを見る",
+   "cats": [
+    "仕事",
+    "学習"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDR+7QPYI+5W12+5YRHE",
+   "beacon": "https://www13.a8.net/0.gif?a8mat=4BENDR+7QPYI+5W12+5YRHE"
+  },
+  {
+   "name": "Qualit（中古パソコン）",
+   "note": "12か月保証つきの中古PCで、学ぶための1台をそろえる",
+   "btn": "中古PCを見る",
+   "cats": [
+    "学習",
+    "暮らし"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDR+K8TNU+50H8+5YJRM",
+   "beacon": "https://www17.a8.net/0.gif?a8mat=4BENDR+K8TNU+50H8+5YJRM"
+  }
+ ]
 }
