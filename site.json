@@ -540,42 +540,5 @@
    "url": "https://px.a8.net/svt/ejp?a8mat=4BENDR+K8TNU+50H8+5YJRM",
    "beacon": "https://www17.a8.net/0.gif?a8mat=4BENDR+K8TNU+50H8+5YJRM"
   }
- ],
- "a8_ads": [
-  {
-   "name": "Plaud（AIボイスレコーダー）",
-   "note": "録音から文字起こし・要約までAIがまとめる",
-   "btn": "詳しく見る",
-   "cats": [
-    "仕事",
-    "学習"
-   ],
-   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTL+7QPYI+5J4W+5YRHE",
-   "beacon": "https://www11.a8.net/0.gif?a8mat=4BELTL+7QPYI+5J4W+5YRHE"
-  },
-  {
-   "name": "MiriCanvas（AIプレゼン）",
-   "note": "テーマを入れるだけで、編集できるスライドを作れる",
-   "btn": "無料で試す",
-   "cats": [
-    "仕事",
-    "文章",
-    "基本"
-   ],
-   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTL+APVZE+5EX8+BX3J6",
-   "beacon": "https://www11.a8.net/0.gif?a8mat=4BELTL+APVZE+5EX8+BX3J6"
-  },
-  {
-   "name": "ConoHa AI Canvas",
-   "note": "ブラウザだけで、本格的なAI画像生成ができる",
-   "btn": "詳しく見る",
-   "cats": [
-    "基本",
-    "暮らし",
-    "学習"
-   ],
-   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTL+BWR6Y+50+7RTY1E",
-   "beacon": "https://www14.a8.net/0.gif?a8mat=4BELTL+BWR6Y+50+7RTY1E"
-  }
  ]
 }
