@@ -551,5 +551,19 @@
   "btn": "Amazonで見る（Kindle）"
  },
  "extra_css": "\n/* theme: navy-notebook (2026-10-27) */\n:root,:root:not(x){--bg:#ffffff;--fg:#14215a;--muted:#4a5687;--line:#c9d1ee;--card:#fff;--soft:#f2f5ff;--accent:#1d3bb3;--accent2:#f5c400}\n@media (prefers-color-scheme:dark){:root{--bg:#ffffff;--fg:#14215a;--muted:#4a5687;--line:#c9d1ee;--card:#fff;--soft:#f2f5ff;--accent:#1d3bb3;--accent2:#f5c400}}\nbody{font-family:\"Zen Kaku Gothic New\",\"Hiragino Sans\",sans-serif;background-image:linear-gradient(#1d3bb30d 1px,transparent 1px),linear-gradient(90deg,#1d3bb30d 1px,transparent 1px);background-size:24px 24px}\nheader{background:#fff;border-bottom:2px solid #14215a}\n.logo,.hero h1,article h1,.sec-h,article h2{font-weight:900}\n.logo{color:#14215a}.logo span{background:linear-gradient(transparent 58%,#ffe34d 58%);color:#14215a}\n.gnav a{background:#fff;border:1.5px solid #14215a;color:#14215a}\n.gnav a:hover,.gnav a.on{background:#ffe34d;color:#14215a}\n.hero-img{border:2px solid #14215a;border-radius:10px}\n.sec-h{border-bottom:2px solid #14215a}\n.card{border:2px solid #14215a;border-radius:10px}\n.card:hover{border-color:#14215a;box-shadow:5px 5px 0 #ffe34d}\n.tag{background:#14215a;color:#ffe34d}\narticle h2{background:none;border-left:0;border-bottom:2px solid #14215a;border-radius:0;padding:4px 2px}\narticle h2 span,article h2{background-image:linear-gradient(transparent 62%,#ffe34d 62%);background-repeat:no-repeat;background-size:100% 100%}\narticle h3{border-bottom:2px dotted #14215a}\n.lead,.toc,.shop,aside .box,.author{border:2px solid #14215a}\n.toc{border-top:6px solid #ffe34d}\n.note{border-left:6px solid #f5c400;background:#fffbe0}\ncode,pre{font-family:\"M PLUS 1 Code\",ui-monospace,monospace}\ncode{background:#f2f5ff;border-color:#c9d1ee}\n.picks{border:2px solid #14215a;box-shadow:5px 5px 0 #ffe34d}\n.picks-h::before{content:\"✎ \"}\n.next{border:2px dashed #14215a;background:#fffbe0}.next-h{color:#14215a}\n.avatar{background:#ffe34d;color:#14215a;border:2px solid #14215a}\naside .box-h{border-bottom:2px solid #14215a}\n.mini b{background:#14215a;color:#ffe34d}\nth{background:#f2f5ff}\nfooter{background:#14215a;color:#c9d1ee;border-top:0}footer a{color:#ffe34d}\n",
- "font_import": "@import url(\"https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=M+PLUS+1+Code:wght@500&display=swap\");\n"
+ "font_import": "@import url(\"https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=M+PLUS+1+Code:wght@500&display=swap\");\n",
+ "a8_ads": [
+  {
+   "name": "Notta（AI文字起こし）",
+   "note": "会議や講義の音声を、AIが文字起こしして議事録にする",
+   "btn": "無料で試す",
+   "cats": [
+    "学習",
+    "基本",
+    "暮らし"
+   ],
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDR+2Z94A+5988+5YJRM",
+   "beacon": "https://www13.a8.net/0.gif?a8mat=4BENDR+2Z94A+5988+5YJRM"
+  }
+ ]
 }
