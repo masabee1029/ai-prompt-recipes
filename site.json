@@ -126,7 +126,9 @@
    "#2dd4bf",
    "#2563eb",
    "#60a5fa"
-  ]
+  ],
+  "style": "notebook",
+  "card_sub": "空欄を埋めて送るだけ"
  },
  "images": {
   "motif": "rings",
