@@ -183,6 +183,35 @@ article h2.ax-sum::before{content:"✔  "}
 .note::before{content:"PROMPT";position:absolute;left:12px;top:6px;font-size:11px;letter-spacing:.2em;color:#4a5687;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700}
 .ax-copy{background:#ffe34d;color:#14215a;border:2px solid #14215a;border-radius:8px;padding:5px 14px;font-family:"Zen Kaku Gothic New",sans-serif}
 article ul li::marker{content:"✓ ";color:#1d3bb3}
+
+/* category-base: 2026-10-27 カテゴリページの共通部分 */
+.cx-page .cards{counter-reset:none}
+.cx-page .card{position:relative;animation:cxin .5s both;animation-delay:calc(var(--i,0)*60ms)}
+@keyframes cxin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cx-page .card{animation:none}}
+.cx-head{position:relative;margin:4px 0 6px}.cx-head h1{margin:0}
+.cx-intro{margin:8px 0 0}
+.cx-meter{display:flex;align-items:center;gap:10px;margin:12px 0 0;font-size:13px}.cx-meter span{white-space:nowrap}.cx-meter b{font-size:1.25em}
+.cx-meter i{position:relative;flex:1;height:8px;border-radius:99px;overflow:hidden;max-width:240px}
+.cx-meter i::after{content:"";position:absolute;left:0;top:0;bottom:0;background:var(--cxm,#888);width:var(--w,0);transition:width .9s ease}
+.cx-sort{display:inline-flex;gap:4px;margin:12px 0 0}.cx-sort button{font:inherit;font-size:13px;padding:4px 12px;cursor:pointer}
+.cx-badge{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;padding:2px 10px;z-index:2}
+.cx-others{margin:18px 0 8px}.cx-others strong{display:block;font-size:13px;margin-bottom:8px}.cx-others div{display:flex;flex-wrap:wrap;gap:8px}
+.cx-others a{text-decoration:none;font-size:14px;padding:5px 12px}.cx-others small{margin-left:6px;opacity:.7}
+
+/* category: binder (2026-10-27) */
+.cx-binder{background:#fff;border:2px solid #14215a;border-radius:4px 14px 14px 4px;padding:18px 20px 18px 46px;box-shadow:6px 6px 0 #ffe34d;
+ background-image:radial-gradient(circle at 20px 26px,#eef1fb 0 7px,#14215a 7px 8.5px,transparent 9px),radial-gradient(circle at 20px 50%,#eef1fb 0 7px,#14215a 7px 8.5px,transparent 9px),radial-gradient(circle at 20px calc(100% - 26px),#eef1fb 0 7px,#14215a 7px 8.5px,transparent 9px)}
+.cx-tab{position:absolute;right:-2px;top:-2px;background:#ffe34d;color:#14215a;border:2px solid #14215a;border-radius:0 14px 0 12px;padding:4px 14px;font-family:"M PLUS 1 Code",monospace;font-weight:700;font-size:18px}
+.cx-eye{display:block;margin-bottom:6px;font-size:11px;letter-spacing:.2em;color:#4a5687;font-weight:700}
+.cx-binder h1{font-size:clamp(26px,4vw,34px);color:#14215a;display:inline;background:linear-gradient(transparent 62%,#ffe34d 62%)}.cx-binder h1 small{font-size:.5em}
+.cx-binder .cx-intro{margin-top:10px}
+.cx-page{--cxm:#14215a}.cx-meter i{background:#eef1fb;border:1.5px solid #14215a}
+.cx-sort button{background:#fff;color:#14215a;border:2px solid #14215a;border-radius:8px}.cx-sort button.on{background:#14215a;color:#fff}
+.cx-page .card{border:2px solid #14215a;box-shadow:4px 4px 0 #ffe34d}
+.cx-page .card::before{content:attr(data-no);position:absolute;top:8px;left:8px;z-index:2;background:#fff;color:#14215a;border:2px solid #14215a;border-radius:6px;padding:0 8px;font-family:"M PLUS 1 Code",monospace;font-size:12px;font-weight:700}
+.cx-badge{background:#ffe34d;color:#14215a;border:2px solid #14215a;border-radius:6px}
+.cx-others a{background:#fff;border:2px solid #14215a;border-radius:8px 8px 0 0;border-bottom-width:4px;color:#14215a;font-weight:700}.cx-others a:hover{background:#ffe34d}
 </style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script></head><body>
 <header><div class="wrap"><div class="top"><a class="logo" href="index.html">そのまま使える<span>AIプロンプト</span>集</a><span class="tagline">コピペで使えるAIへの頼み方</span></div>

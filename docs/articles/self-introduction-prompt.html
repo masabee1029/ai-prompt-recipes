@@ -183,6 +183,35 @@ article h2.ax-sum::before{content:"✔  "}
 .note::before{content:"PROMPT";position:absolute;left:12px;top:6px;font-size:11px;letter-spacing:.2em;color:#4a5687;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700}
 .ax-copy{background:#ffe34d;color:#14215a;border:2px solid #14215a;border-radius:8px;padding:5px 14px;font-family:"Zen Kaku Gothic New",sans-serif}
 article ul li::marker{content:"✓ ";color:#1d3bb3}
+
+/* category-base: 2026-10-27 カテゴリページの共通部分 */
+.cx-page .cards{counter-reset:none}
+.cx-page .card{position:relative;animation:cxin .5s both;animation-delay:calc(var(--i,0)*60ms)}
+@keyframes cxin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cx-page .card{animation:none}}
+.cx-head{position:relative;margin:4px 0 6px}.cx-head h1{margin:0}
+.cx-intro{margin:8px 0 0}
+.cx-meter{display:flex;align-items:center;gap:10px;margin:12px 0 0;font-size:13px}.cx-meter span{white-space:nowrap}.cx-meter b{font-size:1.25em}
+.cx-meter i{position:relative;flex:1;height:8px;border-radius:99px;overflow:hidden;max-width:240px}
+.cx-meter i::after{content:"";position:absolute;left:0;top:0;bottom:0;background:var(--cxm,#888);width:var(--w,0);transition:width .9s ease}
+.cx-sort{display:inline-flex;gap:4px;margin:12px 0 0}.cx-sort button{font:inherit;font-size:13px;padding:4px 12px;cursor:pointer}
+.cx-badge{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;padding:2px 10px;z-index:2}
+.cx-others{margin:18px 0 8px}.cx-others strong{display:block;font-size:13px;margin-bottom:8px}.cx-others div{display:flex;flex-wrap:wrap;gap:8px}
+.cx-others a{text-decoration:none;font-size:14px;padding:5px 12px}.cx-others small{margin-left:6px;opacity:.7}
+
+/* category: binder (2026-10-27) */
+.cx-binder{background:#fff;border:2px solid #14215a;border-radius:4px 14px 14px 4px;padding:18px 20px 18px 46px;box-shadow:6px 6px 0 #ffe34d;
+ background-image:radial-gradient(circle at 20px 26px,#eef1fb 0 7px,#14215a 7px 8.5px,transparent 9px),radial-gradient(circle at 20px 50%,#eef1fb 0 7px,#14215a 7px 8.5px,transparent 9px),radial-gradient(circle at 20px calc(100% - 26px),#eef1fb 0 7px,#14215a 7px 8.5px,transparent 9px)}
+.cx-tab{position:absolute;right:-2px;top:-2px;background:#ffe34d;color:#14215a;border:2px solid #14215a;border-radius:0 14px 0 12px;padding:4px 14px;font-family:"M PLUS 1 Code",monospace;font-weight:700;font-size:18px}
+.cx-eye{display:block;margin-bottom:6px;font-size:11px;letter-spacing:.2em;color:#4a5687;font-weight:700}
+.cx-binder h1{font-size:clamp(26px,4vw,34px);color:#14215a;display:inline;background:linear-gradient(transparent 62%,#ffe34d 62%)}.cx-binder h1 small{font-size:.5em}
+.cx-binder .cx-intro{margin-top:10px}
+.cx-page{--cxm:#14215a}.cx-meter i{background:#eef1fb;border:1.5px solid #14215a}
+.cx-sort button{background:#fff;color:#14215a;border:2px solid #14215a;border-radius:8px}.cx-sort button.on{background:#14215a;color:#fff}
+.cx-page .card{border:2px solid #14215a;box-shadow:4px 4px 0 #ffe34d}
+.cx-page .card::before{content:attr(data-no);position:absolute;top:8px;left:8px;z-index:2;background:#fff;color:#14215a;border:2px solid #14215a;border-radius:6px;padding:0 8px;font-family:"M PLUS 1 Code",monospace;font-size:12px;font-weight:700}
+.cx-badge{background:#ffe34d;color:#14215a;border:2px solid #14215a;border-radius:6px}
+.cx-others a{background:#fff;border:2px solid #14215a;border-radius:8px 8px 0 0;border-bottom-width:4px;color:#14215a;font-weight:700}.cx-others a:hover{background:#ffe34d}
 </style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "自己紹介文をAIと書くプロンプト｜職場・SNS・地域の集まりで使える", "description": "ChatGPT・Claude・GeminiなどのAIと一緒に、自己紹介文を書くためのプロンプトを紹介します。材料の集め方、場面に合わせた長さと言葉づかい、話し言葉への直し方まで、コピーして使える型と、うまくいかないときの直し方をまとめました。", "datePublished": "2026-10-20", "image": "https://masabee1029.github.io/ai-prompt-recipes/img/articles/self-introduction-prompt.jpg", "author": {"@type": "Person", "name": "運営者", "url": "https://masabee1029.github.io/ai-prompt-recipes/about.html"}, "publisher": {"@type": "Organization", "name": "そのまま使えるAIプロンプト集"}, "mainEntityOfPage": "https://masabee1029.github.io/ai-prompt-recipes/articles/self-introduction-prompt.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://masabee1029.github.io/ai-prompt-recipes/index.html"}, {"@type": "ListItem", "position": 2, "name": "文章", "item": "https://masabee1029.github.io/ai-prompt-recipes/category/cc75625.html"}, {"@type": "ListItem", "position": 3, "name": "自己紹介文をAIと書くプロンプト｜職場・SNS・地域の集まりで使える", "item": "https://masabee1029.github.io/ai-prompt-recipes/articles/self-introduction-prompt.html"}]}</script></head><body>
 <header><div class="wrap"><div class="top"><a class="logo" href="../index.html">そのまま使える<span>AIプロンプト</span>集</a><span class="tagline">コピペで使えるAIへの頼み方</span></div>
@@ -224,6 +253,8 @@ article ul li::marker{content:"✓ ";color:#1d3bb3}
 <ul><li>基本の型では、「材料にないことは書かない」と伝えて、あなたの本当のことだけで組み立てる</li><li>SNS、地域の集まりなど、場面に合わせて長さと言葉づかいを変える</li><li>話す場面では、話し言葉に直してもらい、息つぎの位置も入れてもらう</li><li>困ったときは、一言付け足して直すか、複数の案から選ぶ</li><li>住所や家族の名前など、必要のない個人情報は貼り付けない</li></ul>
 <p>次に自己紹介をする場面を思い浮かべて、まずはあなたについての材料を3つだけ書き出してみませんか。聞いた人に覚えてほしいひとことは、何になりそうでしょうか。</p><div class="next"><div class="next-h">今日できる次の一歩</div><p>気になったプロンプトを1つコピーして、今日の用事で1回だけ試してみませんか。空欄を埋めて送るだけで始められます。</p><p>あなたなら、何をAIに頼んでみますか？</p><p>最後まで読んでくださり、ありがとうございました。</p></div><script>(function(C){var R=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 var art=document.querySelector("article");if(!art)return;
+/* 読んだ記事を覚えておく（カテゴリページの「読んだ」印に使う。この端末の中だけ。同じ github.io の別サイトと混ざらないよう、パス全体で覚える） */
+try{var RK="ax-read",RL=JSON.parse(localStorage.getItem(RK)||"[]"),me=location.pathname;if(RL.indexOf(me)<0){RL.push(me);localStorage.setItem(RK,JSON.stringify(RL.slice(-300)))}}catch(e){}
 /* 読むのにかかる時間（1 分 500 字で計算） */
 var n=(art.innerText||"").replace(/\s/g,"").length,m=Math.max(1,Math.round(n/500)),d=art.querySelector(".date");
 if(d){var t=document.createElement("span");t.className="ax-time";t.textContent=C.time.replace("{m}",m);d.after(t)}
