@@ -556,6 +556,35 @@
    ],
    "url": "https://px.a8.net/svt/ejp?a8mat=4BENDR+2Z94A+5988+5YJRM",
    "beacon": "https://www13.a8.net/0.gif?a8mat=4BENDR+2Z94A+5988+5YJRM"
+  },
+  {
+   "name": "Winスクール（プログラミングスクール）",
+   "note": "個人レッスンで、仕事に使えるプログラミングを学べる。まずは無料体験・説明会から",
+   "btn": "無料体験・説明会を見る",
+   "slugs": [
+    "copilot-excel-macro-prompt",
+    "excel-function-prompt",
+    "notebooklm-excel-sales-analysis-prompt",
+    "exam-study-plan-prompt",
+    "chatgpt-future-prediction-prompt",
+    "learn-weak-subject-prompt"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BELTK+FNTKYY+529E+5YJRM",
+   "beacon": "https://www18.a8.net/0.gif?a8mat=4BELTK+FNTKYY+529E+5YJRM"
+  },
+  {
+   "name": "Notta Memo（AIボイスレコーダー）",
+   "note": "会議を録音して、あとから文字で読み返すためのAIボイスレコーダー",
+   "btn": "公式サイトを見る",
+   "slugs": [
+    "meeting-minutes-prompt",
+    "copilot-recording-transcription-prompt",
+    "meeting-agenda-prompt"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDR+3KOQ2+5988+BWVTE",
+   "beacon": "https://www18.a8.net/0.gif?a8mat=4BENDR+3KOQ2+5988+BWVTE"
   }
  ],
  "hero_html": "<section class=\"hx hx-note\"><p class=\"hx-eyebrow\">そのまま使えるプロンプト集</p><h1 class=\"hx-h1\">コピペで使える、<br><em>AIへの頼み方。</em></h1><p class=\"hx-lead\">コピーして空欄を埋めるだけで、ChatGPT・Claude・Gemini などの対話型AIに、仕事・文章・学習・暮らしの用事を頼めます。メール、議事録、企画書から毎日の用事まで、用途別に使えるプロンプト（指示文）集です。運営者は広告・ブランドの仕事でAIツールを日常的に使っています。だから、実際の用事でそのまま使いやすい形にそろえています。</p><div class=\"hx-card\"><div class=\"hx-card-h\"><span class=\"hx-dot\"></span>議事録をまとめるプロンプト<small>仕事</small></div><pre class=\"hx-pre\" id=\"hx-p\" data-type=\"あなたは会議の記録係です。以下の会議メモをもとに、社内共有用の議事録を作成してください。\n会議名：【　】\n日時：【　】\n参加者：【　】\n出力の形式：目的／議題と要点／決定事項／ToDo（担当・期限・内容を表で）／保留事項\nメモにないことは推測で補わず「要確認」と書いてください。\n会議メモ：【ここにメモを貼り付け】\" data-speed=\"22\"></pre><div class=\"hx-card-f\"><button class=\"hx-copy\" data-copy=\"#hx-p\" type=\"button\">コピーする</button><a class=\"hx-go\" href=\"articles/meeting-minutes-prompt.html\">使い方を見る →</a></div></div><div class=\"hx-chips\"><a href=\"category/cc75625.html\">文章</a><a href=\"category/ccfc767.html\">仕事</a><a href=\"category/c7b6871.html\">学習</a><a href=\"category/cee1225.html\">暮らし</a><a href=\"category/c4092ed.html\">基本</a></div><div class=\"hx-vs\"><div class=\"hx-side\"><div class=\"hx-k\">そのまま頼むと</div><div class=\"hx-v\">答えがぼんやり</div><p>何を・誰に・どの形かが伝わらない</p></div><div class=\"hx-mid\">→</div><div class=\"hx-side on\"><div class=\"hx-k\">型で頼むと</div><div class=\"hx-v\">欲しい形で返る</div><p>空欄を埋めるだけで条件がそろう</p></div></div><div class=\"hx-stats\"><div><b class=\"hx-n\" data-n=\"{N_ARTICLES}\">{N_ARTICLES}</b><span>本のプロンプト記事</span></div><div><b class=\"hx-n\" data-n=\"{N_CATS}\">{N_CATS}</b><span>つの用途</span></div><div><b class=\"hx-n\" data-n=\"3\">3</b><span>ステップで使える</span></div></div><ol class=\"hx-steps\"><li><b>✎ 1</b><strong>コピーする</strong><span>記事のプロンプトをそのまま</span></li><li><b>✎ 2</b><strong>【　】を埋める</strong><span>あなたの用事に書き換え</span></li><li><b>✎ 3</b><strong>AIに送る</strong><span>ChatGPT・Claude・Gemini</span></li></ol></section>\n<script>(function(){var R=window.matchMedia&&matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\ndocument.querySelectorAll(\"[data-type]\").forEach(function(t){var s=t.getAttribute(\"data-type\"),sp=+(t.getAttribute(\"data-speed\")||55);if(R){t.textContent=s;return}var i=0;(function f(){t.textContent=s.slice(0,i)+(i<s.length?\"▍\":\"\");if(i++<s.length)setTimeout(f,sp)})()});\ndocument.querySelectorAll(\"[data-rotate]\").forEach(function(el){var w=el.getAttribute(\"data-rotate\").split(\"|\"),i=0;if(R)return;setInterval(function(){i=(i+1)%w.length;el.classList.remove(\"in\");void el.offsetWidth;el.textContent=w[i];el.classList.add(\"in\")},2200)});\ndocument.querySelectorAll(\"[data-copy]\").forEach(function(b){b.addEventListener(\"click\",function(){var s=document.querySelector(b.getAttribute(\"data-copy\")).getAttribute(\"data-type\");navigator.clipboard&&navigator.clipboard.writeText(s).then(function(){var o=b.textContent;b.textContent=\"コピーしました\";setTimeout(function(){b.textContent=o},1600)})})});\nfunction seq(el){var k=el.children,d=+(el.getAttribute(\"data-seq\")||450);for(var j=0;j<k.length;j++)(function(c,j){setTimeout(function(){c.classList.add(\"on\")},R?0:300+j*d)})(k[j],j)}\nfunction cnt(el){var n=+el.getAttribute(\"data-n\"),t0=null;if(R){el.textContent=n;return}(function st(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1200,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st)})(performance.now())}\nvar els=[].slice.call(document.querySelectorAll(\".hx-n,[data-seq]\"));function go(el){el.classList.contains(\"hx-n\")?cnt(el):seq(el)}\nif(!(\"IntersectionObserver\" in window)){els.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);go(e.target)}})});els.forEach(function(el){io.observe(el)})})();</script>",

@@ -116,10 +116,12 @@ def picks_box(cat, title, compact=False):
 # ---------- ASP の提携広告（site.json の vc_ads＝バリューコマース、a8_ads＝A8.net。2026-10-23 追加） ----------
 VC_ADS = SITECFG.get("vc_ads", []) + SITECFG.get("a8_ads", [])
 
-def vc_box(cat):
+def vc_box(cat, slug=""):
     """記事のカテゴリに合う ASP 広告（cats が空なら全記事）を最大3件。広告がなければ何も出さない。"""
     e = html.escape
-    ads = [a for a in VC_ADS if a.get("url") and (not a.get("cats") or cat in a["cats"])][:4]  # 2026-10-27: 3→4 件
+    # 2026-11-22: slugs を持つ広告は、その記事だけに先頭で出す（記事の中身と合う広告を記事単位で選ぶため）
+    mine = [a for a in VC_ADS if a.get("url") and a.get("slugs") and slug in a["slugs"]]
+    ads = (mine + [a for a in VC_ADS if a.get("url") and not a.get("slugs") and (not a.get("cats") or cat in a["cats"])])[:4]  # 2026-10-27: 3→4 件
     if not ads:
         return ""
     items = "".join(
@@ -551,9 +553,9 @@ def build():
             art = toc + art
         k = art.rfind('<h2 id="s%d">' % len(a["toc"])) if a["toc"] else -1
         if k > 0:
-            art = art[:k] + picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat) + book_box() + art[k:]
+            art = art[:k] + picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat, a.get("slug", "")) + book_box() + art[k:]
         else:
-            art += picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat) + book_box()
+            art += picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat, a.get("slug", "")) + book_box()
         cu = "category/%s.html" % cat_slug(cat)
         body = ('%s<article><a class="tag" href="../%s">%s</a><span class="date">%s</span><h1>%s</h1><p class="prline">%s</p>%s'
                 '<div class="lead"><strong>この記事でわかること</strong>%s</div>%s</article>%s%s%s'
