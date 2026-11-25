@@ -25,7 +25,7 @@ header{border-bottom:1px solid var(--line);background:var(--card)}
 .sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
 .sec-h a{font-size:13px;font-weight:400}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
-.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1024/572;object-fit:cover;border-radius:12px 12px 0 0}
 .card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
 .card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
 .tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
@@ -39,6 +39,7 @@ article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);pa
 .lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
 .lead strong{display:block;color:var(--accent)}
 .toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.fig{margin:22px 0;text-align:center}.fig img{max-width:100%;height:auto;border-radius:8px;border:1px solid rgba(127,127,127,.25)}.fig figcaption{font-size:.9em;color:var(--muted,#666);margin-top:8px;line-height:1.6}.fig-tag{display:inline-block;font-size:.78em;border:1px solid currentColor;border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px}
 .note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
 code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
@@ -66,7 +67,7 @@ aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6p
 aside .sticky{position:sticky;top:16px}
 aside .picks{margin:0 0 20px}
 .mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
-.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1024/572;object-fit:cover;border-radius:6px}
 .mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
 .catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
 .catlist small{color:var(--muted)}
@@ -235,12 +236,14 @@ article p strong,article li strong,article td strong{font-weight:800;color:var(-
 <p>私も最初は「不良の報告資料を作って」の一言だけで頼んで、どこの会社にも当てはまる一般論の資料が出てきて、結局ゼロから作り直したことがあります。「目的」と「読む人」の2行を足すだけで、出てくるものがあなたの会議に近づきます。</p>
 <p>頼み方の前後を並べると、違いがはっきりします。</p>
 <div class="tbl"><table><tr><th>頼み方</th><th>出てくるもの</th></tr><tr><td>「不良の報告資料を作って」</td><td>どの会社にも当てはまる一般的な構成。数字の欄がなく、お願いしたいことも入らない</td></tr><tr><td>「目的・読む人・骨組み」の3行つき</td><td>あなたの会議の順番で並んだ構成案。承認をもらうための「お願い」のページまで入る</td></tr></table></div>
+<figure class="fig"><img src="../img/fig/copilot-document-creation-prompt-1.png" alt="説明用の図：3行を足すと、会議の順番で並んだ5枚の構成案が出てきます" loading="lazy"><figcaption><span class="fig-tag">説明用の図</span>3行を足すと、会議の順番で並んだ5枚の構成案が出てきます</figcaption></figure>
 <p>骨組みができたら、ページごとに「2枚目の本文を、箇条書き3つから5つに増やして」と頼むと、少しずつ資料に育っていきます。白紙から企画書の構成を作る進め方は、<a href="proposal-outline-prompt.html">企画書の骨組みをAIと作るプロンプト</a>でも紹介しています。</p>
 <h2 id="s2">Copilotで資料を作る3つの入口（Chat・Word・PowerPoint）</h2>
 <p>会社のMicrosoft 365に入っているCopilotには、資料作成に使える入口が3つあります。執筆時点（2026年10月）の公式サイトの案内をもとにした整理で、使える機能は会社の契約（ライセンス）や設定で変わります。ボタンの名前や画面も変わることがあるので、見つからないときはMicrosoftの公式サポートページで確かめてください。</p>
 <div class="tbl"><table><tr><th>入口</th><th>向いている場面</th><th>頼み方のコツ</th></tr><tr><td>Copilot Chat（チャット画面）</td><td>骨組みや文章の案を考える。何を書くか決まっていない段階</td><td>上の基本の型をそのまま貼る。出た構成を見ながら、チャットで直していく</td></tr><tr><td>WordのCopilot</td><td>報告書・手順書・引き継ぎなど、文章が主役の資料</td><td>「下書き」で見出しごとに書いてもらう。1回で全部でなく、見出し1つずつ頼む</td></tr><tr><td>PowerPointのCopilot</td><td>会議で見せるスライド。骨組みが決まったあと</td><td>「〜についてのプレゼンテーションを作成」と頼むか、Wordで作った骨組みのファイルをもとにスライドにしてもらう</td></tr></table></div>
 <p>PowerPointのCopilotには、執筆時点の公式案内では、プロンプトからスライドを作る機能と、Word文書をもとにプレゼンテーションを作る機能が案内されています。会社でよく使う流れは、「Copilot Chatで骨組み → Wordで文章を整える → PowerPointでスライドにする」の順です。骨組みの段階で直すほうが、スライドになってから直すより手戻りが少ないからです。</p>
 <p>あなたの明日の資料は、文章が主役ですか、スライドが主役ですか。文章ならWord、スライドならPowerPoint、まだ何を書くか決まっていないならCopilot Chatから始めるのが、迷わない選び方です。</p>
+<figure class="fig"><img src="../img/fig/copilot-document-creation-prompt-2.png" alt="説明用の図：Chatで骨組み、Wordで文章、PowerPointでスライド、の順に進めます" loading="lazy"><figcaption><span class="fig-tag">説明用の図</span>Chatで骨組み、Wordで文章、PowerPointでスライド、の順に進めます</figcaption></figure>
 <h2 id="s3">場面別のプロンプト例（会議報告・工程の説明・営業向け・引き継ぎ）</h2>
 <p>基本の型が使えるようになったら、「目的」と「骨組み」を場面に合わせて書き換えます。生産管理や品質、営業支援の毎日でよくある4つの場面です。</p>
 <h3>月例の会議報告（数字の報告）</h3>

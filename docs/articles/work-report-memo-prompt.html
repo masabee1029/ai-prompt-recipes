@@ -25,7 +25,7 @@ header{border-bottom:1px solid var(--line);background:var(--card)}
 .sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
 .sec-h a{font-size:13px;font-weight:400}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
-.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1024/572;object-fit:cover;border-radius:12px 12px 0 0}
 .card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
 .card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
 .tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
@@ -39,6 +39,7 @@ article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);pa
 .lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
 .lead strong{display:block;color:var(--accent)}
 .toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.fig{margin:22px 0;text-align:center}.fig img{max-width:100%;height:auto;border-radius:8px;border:1px solid rgba(127,127,127,.25)}.fig figcaption{font-size:.9em;color:var(--muted,#666);margin-top:8px;line-height:1.6}.fig-tag{display:inline-block;font-size:.78em;border:1px solid currentColor;border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px}
 .note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
 code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
@@ -66,7 +67,7 @@ aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6p
 aside .sticky{position:sticky;top:16px}
 aside .picks{margin:0 0 20px}
 .mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
-.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1024/572;object-fit:cover;border-radius:6px}
 .mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
 .catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
 .catlist small{color:var(--muted)}
@@ -232,6 +233,7 @@ article p strong,article li strong,article td strong{font-weight:800;color:var(-
 <p>報連相が苦手だと感じる人の多くは、話す中身が足りないのではなく、<strong>話す順番</strong>がずれています。起きた順に話すと、聞く側は最後まで結論が分かりません。忙しい上司ほど、途中で「つまり？」と聞きたくなります。</p>
 <p>私も最初は、トラブルの報告を「朝の段取りから」話してしまい、肝心の「今日の出荷に間に合うか」が最後になる、というつまずきをしがちでした。これはよくあるつまずきで、順番を入れ替えるだけで伝わり方が変わります。</p>
 <div class="tbl"><table><tr><th>起きた順の報告（伝わりにくい）</th><th>AIで並べ替えた報告（伝わりやすい）</th></tr><tr><td>朝、A工程で機械が止まって、保全に連絡して、部品を待って…</td><td>結論：B社向けの出荷は1日遅れる見込みです</td></tr><tr><td>…それで午後に再開したんですが、検査で少し引っかかって…</td><td>事実：A工程の停止で約3時間の遅れ、検査で再確認が発生</td></tr><tr><td>…なので、たぶん明日になるかと</td><td>お願い：B社への連絡を、課長から入れていただけますか</td></tr></table></div>
+<figure class="fig"><img src="../img/fig/work-report-memo-prompt-1.png" alt="説明用の図：起きた順だと結論が最後、並べ替えると結論がいちばん上に来ます" loading="lazy"><figcaption><span class="fig-tag">説明用の図</span>起きた順だと結論が最後、並べ替えると結論がいちばん上に来ます</figcaption></figure>
 <p>右の列の形を、自分で毎回組み立てるのは大変です。そこで、<strong>頭の中のことは走り書きのまま出して、並べ替えはAIに任せる</strong>のがこの記事の考え方です。</p>
 <h2 id="s2">型1｜報告メモを整えるプロンプト（結論→事実→お願い）</h2>
 <p>いちばん出番が多いのが、この報告の型です。メモは箇条書きでも、話し言葉のままでもかまいません。</p>
